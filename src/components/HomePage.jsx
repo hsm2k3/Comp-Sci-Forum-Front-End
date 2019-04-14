@@ -12,7 +12,7 @@ class HomePage extends Component {
             <div>HomePage</div>
         );
     };
-};
+}
 
 HomePage.propTypes = {
 

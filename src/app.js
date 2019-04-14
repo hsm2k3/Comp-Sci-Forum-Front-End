@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
+import NavigationBar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
 
@@ -17,7 +17,7 @@ class App extends Component {
     render() {
         return (
           <div className="App">
-              <Navbar/>
+              <NavigationBar/>
               <HomePage/>
               <h1>Users</h1>
               {
