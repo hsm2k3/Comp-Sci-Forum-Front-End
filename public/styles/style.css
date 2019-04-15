@@ -29,7 +29,8 @@ body {
 #HomePage,
 #DashPage,
 #AboutPage,
-#ProfilePage{
+#ProfilePage,
+#LoginPage{
     flex: 5 5;
     display: flex;
     flex-direction: row;
