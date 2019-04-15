@@ -24,7 +24,9 @@ class DashPage extends Component {
                         <NavLink className={"nav-link sub-nav-link add-nav-link"}><FontAwesomeIcon icon={faPlus}/></NavLink>
                     </ul>
                 </nav>
-                <h1>Dash Page</h1>
+                <div className="dash-body">
+                    <h1>Dash Page</h1>
+                </div>
 
             </div>
         );

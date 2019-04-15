@@ -72,6 +72,14 @@ body {
     padding: 0;
     margin: 0;
 }
+.dash-body{
+    flex: 1 1;
+    background-color: rgba(255,255,255,0.9);
+    margin-left: 10px;
+    border-left: thick double #343a40;
+    z-index: -1;
+}
+
 .sub-nav-link{
     height: 50px;
     color: black;
