@@ -28,6 +28,9 @@ body {
 
 #HomePage{
     flex: 5 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
 #SideMenu{
@@ -42,7 +45,15 @@ body {
     background-color: #413B35;
 }
 
+
+
+/*=============================================================*/
+/*  Overwrite bootstrap */
+/*=============================================================*/
 .jumbotron{
     color: #17a2b8;
     background-color: rgba(57, 64, 70, 0.8);
+    margin: auto auto;
+    max-width: 50%;
+    /*max-height: 50%;*/
 }

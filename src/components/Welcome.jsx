@@ -7,8 +7,8 @@ const Welcome = () => {
         <Jumbotron>
             <h1>Welcome to Comp_CSI</h1>
             <p>
-                This is a simple hero unit, a simple jumbotron-style component for calling
-                extra attention to featured content or information.
+                This is the unofficial website of the Comp Sci department for the students, by the students.
+                <br/>More Specifically Yussef, Alex, and Mike.
             </p>
             <p>
                 <Button variant="dark">Learn more</Button>
