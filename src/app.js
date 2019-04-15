@@ -3,6 +3,7 @@ import './App.css';
 import NavigationBar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
+import SideMenu from './components/SideMenu';
 
 class App extends Component {
 
@@ -17,14 +18,13 @@ class App extends Component {
     render() {
         return (
           <div className="App">
-              <NavigationBar/>
-              <HomePage/>
-              <h1>Users</h1>
-              {
-                  this.state.users.map(user => {
-                     return <li key={user.id}>{user.name}</li>;
-                  })
-              }
+              <div className="page">
+                  <NavigationBar/>
+                  <div className="main">
+                      <SideMenu/>
+                      <HomePage/>
+                  </div>
+              </div>
               <Footer/>
           </div>
         );

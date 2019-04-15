@@ -10,8 +10,8 @@ class NavigationBar extends Component {
 
     render(){
         return(
-            <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#">Navbar</Navbar.Brand>
+            <Navbar id={"NavigationBar"} bg="dark" variant="dark">
+                <Navbar.Brand href="#">Comp_CSI</Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link href="#">Home</Nav.Link>
                     <Nav.Link href="#">About</Nav.Link>

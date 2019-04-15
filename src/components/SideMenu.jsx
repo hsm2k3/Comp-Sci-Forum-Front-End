@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-class HomePage extends Component {
+class SideMenu extends Component {
     constructor(props){
         super(props);
         this.state = {  };
@@ -9,13 +9,13 @@ class HomePage extends Component {
 
     render(){
         return(
-            <div id={"HomePage"}>HomePage</div>
+            <aside id={"SideMenu"}>Side Menu</aside>
         );
     };
 }
 
-HomePage.propTypes = {
+SideMenu.propTypes = {
 
 };
 
-export default HomePage;
+export default SideMenu;
