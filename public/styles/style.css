@@ -63,7 +63,7 @@ body {
 
 #Footer{
     height: 40px;
-    color: #17a2b8;
+    color: rgba(255,255,255,.5);;
     background-color: #413B35;
 }
 
