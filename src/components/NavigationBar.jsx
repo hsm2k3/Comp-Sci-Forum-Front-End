@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
+import {Navbar, Nav, NavItem, Form, FormControl, Button} from 'react-bootstrap';
+import {Link, NavLink} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class NavigationBar extends Component {
@@ -13,9 +14,10 @@ class NavigationBar extends Component {
             <Navbar id={"NavigationBar"} bg="dark" variant="dark">
                 <Navbar.Brand href="#">Comp_CSI</Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Nav.Link href="#">Home</Nav.Link>
-                    <Nav.Link href="#">About</Nav.Link>
-                    <Nav.Link href="#">Login</Nav.Link>
+                    <NavLink to={"/"} className={"nav-link"} exact={true}>Home</NavLink>
+                    <NavLink to={"/dash"} className={"nav-link"}>Dash</NavLink>
+                    <NavLink to={"/about"} className={"nav-link"}>About</NavLink>
+                    <NavLink to={"/login"} className={"nav-link"}>Login</NavLink>
                 </Nav>
                 <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
