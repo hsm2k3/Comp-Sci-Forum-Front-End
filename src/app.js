@@ -9,13 +9,9 @@ import DashPage from "./components/DashPage";
 import AboutPage from './components/AboutPage';
 
 class App extends Component {
-
-    state = { users: [] }
-
-    componentDidMount() {
-        fetch('/users')
-            .then(res => res.json())
-            .then(users => this.setState({users}));
+    constructor(props){
+        super(props);
+        this.state = { }
     }
 
     render() {

@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
 class DashPage extends Component {
@@ -13,15 +15,17 @@ class DashPage extends Component {
             <div id={"DashPage"}>
                 <nav>
                     <ul className={"dash-nav"}>
-                        <NavLink className={"nav-link sub-nav-link"}>Menu1</NavLink>
-                        <NavLink className={"nav-link sub-nav-link"}>Menu2</NavLink>
-                        <NavLink className={"nav-link sub-nav-link"}>Menu3</NavLink>
-                        <NavLink className={"nav-link sub-nav-link"}>Menu4</NavLink>
-                        <NavLink className={"nav-link sub-nav-link"}>Menu5</NavLink>
-                        <NavLink className={"nav-link sub-nav-link"}>Menu6</NavLink>
+                        <NavLink className={"nav-link sub-nav-link"}>Tab_1</NavLink>
+                        <NavLink className={"nav-link sub-nav-link"}>Tab_2</NavLink>
+                        <NavLink className={"nav-link sub-nav-link"}>Tab_3</NavLink>
+                        <NavLink className={"nav-link sub-nav-link"}>Tab_4</NavLink>
+                        <NavLink className={"nav-link sub-nav-link"}>Tab_5</NavLink>
+                        <NavLink className={"nav-link sub-nav-link"}>Tab_6</NavLink>
+                        <NavLink className={"nav-link sub-nav-link add-nav-link"}><FontAwesomeIcon icon={faPlus}/></NavLink>
                     </ul>
                 </nav>
                 <h1>Dash Page</h1>
+
             </div>
         );
     };
