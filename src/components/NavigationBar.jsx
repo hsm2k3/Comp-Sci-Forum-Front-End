@@ -12,7 +12,7 @@ class NavigationBar extends Component {
     render(){
         return(
             <Navbar id={"NavigationBar"} bg="dark" variant="dark">
-                <Navbar.Brand href="#">Comp_CSI</Navbar.Brand>
+                <Navbar.Brand>Comp_CSI</Navbar.Brand>
                 <Nav className="mr-auto">
                     <NavLink to={"/"} className={"nav-link"} exact={true}>Home</NavLink>
                     <NavLink to={"/dash"} className={"nav-link"}>Dash</NavLink>
