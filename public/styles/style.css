@@ -26,7 +26,7 @@ body {
     background-color: rgba(80,80,80,0.6);
 }
 
-#HomePage{
+#HomePage,#DashPage{
     flex: 5 5;
     display: flex;
     flex-direction: row;
