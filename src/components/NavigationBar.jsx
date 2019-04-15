@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
 import {NavLink} from 'react-router-dom';
+import {fas} from 'font-awesome';
 import PropTypes from 'prop-types';
 
 class NavigationBar extends Component {
