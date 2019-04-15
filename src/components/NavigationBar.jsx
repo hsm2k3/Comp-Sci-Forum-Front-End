@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Navbar, Nav, NavItem, Form, FormControl, Button} from 'react-bootstrap';
-import {Link, NavLink} from 'react-router-dom';
+import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
+import {NavLink} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class NavigationBar extends Component {
