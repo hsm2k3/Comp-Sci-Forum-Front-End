@@ -35,10 +35,29 @@ body {
     justify-content: flex-start;
 }
 
+#DashPage{
+    display: flex;
+    flex-direction: column;
+}
+
+#DashPage>nav{
+    height: 40px;
+    margin-left: 2px;
+    background-color: rgba(115,127,140,0.8);
+    border-left: thick double #343a40;
+    border-bottom: 2px solid #343a40;
+}
+
 #SideMenu{
     flex: 1 1;
     min-width: 175px;
     background-color: rgba(115,127,140,0.8);
+    border-right: 2px solid #343a40;
+}
+#SideMenu>h5{
+    height: 40px;
+    background-color: #17a2b8;
+    border-bottom: 2px solid #343a40;
 }
 
 #Footer{
@@ -47,6 +66,31 @@ body {
     background-color: #413B35;
 }
 
+.dash-nav{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+.sub-nav-link{
+    height: 50px;
+    color: black;
+    list-style: none;
+    padding: 7px;
+    margin: 0 5px 0 5px;
+    background-color: #d9dadc;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.sub-nav-link:hover{
+    color: #d9dadc;
+    height: 60px;
+    background-color: #343a40;
+    border-bottom: 2px solid black;
+    transition: all 0.15s;
+}
 
 
 
