@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Welcome from './Welcome';
 import PropTypes from 'prop-types';
 
 class HomePage extends Component {
@@ -9,7 +10,9 @@ class HomePage extends Component {
 
     render(){
         return(
-            <div id={"HomePage"}>HomePage</div>
+            <div id={"HomePage"}>
+                <Welcome/>
+            </div>
         );
     };
 }

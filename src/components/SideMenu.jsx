@@ -9,7 +9,10 @@ class SideMenu extends Component {
 
     render(){
         return(
-            <aside id={"SideMenu"}>Side Menu</aside>
+            <aside id={"SideMenu"}>
+                <h5>Sections</h5>
+
+            </aside>
         );
     };
 }
