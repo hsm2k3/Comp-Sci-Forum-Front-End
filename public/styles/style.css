@@ -28,7 +28,8 @@ body {
 
 #HomePage,
 #DashPage,
-#AboutPage{
+#AboutPage,
+#ProfilePage{
     flex: 5 5;
     display: flex;
     flex-direction: row;

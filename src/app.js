@@ -7,6 +7,7 @@ import HomePage from './components/HomePage';
 import SideMenu from './components/SideMenu';
 import DashPage from "./components/DashPage";
 import AboutPage from './components/AboutPage';
+import ProfilePage from './components/ProfilePage';
 
 class App extends Component {
     constructor(props){
@@ -26,6 +27,7 @@ class App extends Component {
                               <Route path={"/"} component={HomePage} exact={true}/>
                               <Route path={"/dash"} component={DashPage}/>
                               <Route path={"/about"} component={AboutPage}/>
+                              <Route path={"/profile"} component={ProfilePage}/>
                               <Redirect to={"/"}/>
                           </Switch>
                       </div>

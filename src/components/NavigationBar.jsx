@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
 import {NavLink} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser, faKeyboard, faDna } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUser, faKeyboard, faDna, faIdCard } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
 class NavigationBar extends Component {
@@ -27,6 +27,10 @@ class NavigationBar extends Component {
                     <NavLink to={"/about"} className={"nav-link"}>
                         <FontAwesomeIcon icon={faDna}/>
                         About
+                    </NavLink>
+                    <NavLink to={"/profile"} className={"nav-link"}>
+                        <FontAwesomeIcon icon={faIdCard}/>
+                        Profile
                     </NavLink>
                 </Nav>
                 <Form inline>
