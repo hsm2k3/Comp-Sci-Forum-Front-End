@@ -3,12 +3,12 @@ import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom
 import './App.css';
 import NavigationBar from './components/NavigationBar';
 import Footer from './components/Footer';
-import HomePage from './components/HomePage';
+import HomePage from './components/pages/HomePage';
 import SideMenu from './components/SideMenu';
-import DashPage from "./components/DashPage";
-import AboutPage from './components/AboutPage';
-import ProfilePage from './components/ProfilePage';
-import LoginPage from './components/LoginPage';
+import DashPage from "./components/pages/DashPage";
+import AboutPage from './components/pages/AboutPage';
+import ProfilePage from './components/pages/ProfilePage';
+import LoginPage from './components/pages/LoginPage';
 
 class App extends Component {
     constructor(props){

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Welcome from './Welcome';
+import Welcome from '../Welcome';
 import PropTypes from 'prop-types';
 
 class HomePage extends Component {
