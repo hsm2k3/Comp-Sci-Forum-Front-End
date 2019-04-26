@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Form, Button } from 'react-bootstrap';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class LoginPage extends Component {
     render(){
@@ -29,8 +29,8 @@ class LoginPage extends Component {
     };
 }
 
-LoginPage.propTypes = {
-
-};
+// LoginPage.propTypes = {
+//
+// };
 
 export default LoginPage;

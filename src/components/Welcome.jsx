@@ -1,6 +1,6 @@
 import React from 'react';
 import {Jumbotron,Button} from 'react-bootstrap';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const Welcome = () => {
     return(
@@ -18,8 +18,8 @@ const Welcome = () => {
 
 }
 
-Welcome.propTypes = {
-
-};
+// Welcome.propTypes = {
+//
+// };
 
 export default Welcome;

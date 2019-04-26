@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Welcome from '../Welcome';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class HomePage extends Component {
     constructor(props){
@@ -17,8 +17,8 @@ class HomePage extends Component {
     };
 }
 
-HomePage.propTypes = {
-
-};
+// HomePage.propTypes = {
+//
+// };
 
 export default HomePage;

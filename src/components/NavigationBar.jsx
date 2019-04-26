@@ -3,7 +3,7 @@ import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
 import {NavLink} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faKeyboard, faDna, faIdCard } from '@fortawesome/free-solid-svg-icons';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class NavigationBar extends Component {
     constructor(props){
@@ -48,8 +48,8 @@ class NavigationBar extends Component {
     };
 }
 
-Navbar.propTypes = {
-
-};
+// Navbar.propTypes = {
+//
+// };
 
 export default NavigationBar;

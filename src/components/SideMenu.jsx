@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 
 class SideMenu extends Component {
@@ -10,8 +10,12 @@ class SideMenu extends Component {
 
     componentDidMount(){
         fetch('localhost:3001/api/sections')
-            .then((res) => res.json())
-            .then((data) => console.log(data))
+            .then(res => {
+                return res.json()
+            })
+            .then(data => {
+                console.log(data)
+            })
             .catch(() => console.log('Something went wrong!'))
     }
 
@@ -25,8 +29,8 @@ class SideMenu extends Component {
     };
 }
 
-SideMenu.propTypes = {
-
-};
+// SideMenu.propTypes = {
+//
+// };
 
 export default SideMenu;

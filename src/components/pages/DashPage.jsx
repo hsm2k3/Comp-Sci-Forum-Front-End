@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class DashPage extends Component {
     constructor(props){
@@ -33,8 +33,8 @@ class DashPage extends Component {
     };
 }
 
-DashPage.propTypes = {
-
-};
+// DashPage.propTypes = {
+//
+// };
 
 export default DashPage;

@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoePrints } from '@fortawesome/free-solid-svg-icons';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const Footer = () => {
     return(
@@ -13,8 +13,8 @@ const Footer = () => {
     );
 }
 
-Footer.propTypes = {
-
-};
+// Footer.propTypes = {
+//
+// };
 
 export default Footer;

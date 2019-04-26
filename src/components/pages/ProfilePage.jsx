@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class ProfilePage extends Component {
     constructor(props){
@@ -24,8 +24,8 @@ class ProfilePage extends Component {
     };
 }
 
-ProfilePage.propTypes = {
-
-};
+// ProfilePage.propTypes = {
+//
+// };
 
 export default ProfilePage;
