@@ -5,18 +5,20 @@ import React, {Component} from 'react';
 class SideMenu extends Component {
     constructor(props){
         super(props);
-        this.state = {  };
+        this.state = {
+
+        };
     }
 
     componentDidMount(){
-        fetch('localhost:3001/api/sections')
+        fetch('/api/sections')
             .then(res => {
                 return res.json()
             })
             .then(data => {
                 console.log(data)
             })
-            .catch(() => console.log('Something went wrong!'))
+            .catch(() => console.error('SideMenu: unable to fetch data'))
     }
 
     render(){
