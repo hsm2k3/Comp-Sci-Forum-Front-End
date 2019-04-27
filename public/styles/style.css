@@ -5,6 +5,10 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
+ul{
+    margin: 0;
+    padding: 0;
+}
 
 .page{
     flex: 1 1;
@@ -60,7 +64,15 @@ body {
     height: 40px;
     background-color: #17a2b8;
     border-bottom: 2px solid #343a40;
+    margin-bottom: 0;
 }
+
+.SectionListItem{
+    list-style: none;
+    background-color: rgba(255,255,255,0.2);
+    padding: 3px 0;
+}
+
 
 #LoginPage{
 
