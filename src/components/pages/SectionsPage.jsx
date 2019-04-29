@@ -8,12 +8,11 @@ class SectionsPage extends Component {
     }
 
     render(){
-        const section = this.props.match.params.section;
-        console.log(this.props);
+        const {match} = this.props;
 
         return(
             <div id={"SectionsPage"}>
-                <h1>Sections Page: {section}</h1>
+                <h1>Sections Page: {match.params.section}</h1>
             </div>
         );
     };
