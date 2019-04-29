@@ -27,11 +27,11 @@ class App extends Component {
                           <SideMenu/>
                           <Switch>
                               <Route path={"/"} component={HomePage} exact={true}/>
-                              <Route path={"/section"} component={SectionsPage}/>
                               <Route path={"/dash"} component={DashPage}/>
                               <Route path={"/about"} component={AboutPage}/>
                               <Route path={"/profile"} component={ProfilePage}/>
                               <Route path={"/login"} component={LoginPage}/>
+                              <Route path={"/sections/:section"} component={SectionsPage}/>
                               <Redirect to={"/"}/>
                           </Switch>
                       </div>

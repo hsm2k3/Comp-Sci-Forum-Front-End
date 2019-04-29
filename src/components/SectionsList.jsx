@@ -4,11 +4,11 @@ import { NavLink } from 'react-router-dom';
 
 const SectionsList = props => (
     props.sections.map(section => {
-        return <li className={"SectionListItem"} key={section.id}>
-            <NavLink to={`/section/${section.code ? section.code : section.title}`}>
+        return <NavLink className={"SectionListLink"} key={section.id} to={`/sections/${section.code ? section.code : section.title}`}>
+            <li className={"SectionListItem"} >
                 { section.code ? section.code : section.title }
-            </NavLink>
-        </li>
+            </li>
+        </NavLink>
     })
 );
 
