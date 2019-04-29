@@ -15,13 +15,13 @@ class DashPage extends Component {
             <div id={"DashPage"}>
                 <nav>
                     <ul className={"dash-nav"}>
-                        <NavLink className={"nav-link sub-nav-link"}>Tab_1</NavLink>
-                        <NavLink className={"nav-link sub-nav-link"}>Tab_2</NavLink>
-                        <NavLink className={"nav-link sub-nav-link"}>Tab_3</NavLink>
-                        <NavLink className={"nav-link sub-nav-link"}>Tab_4</NavLink>
-                        <NavLink className={"nav-link sub-nav-link"}>Tab_5</NavLink>
-                        <NavLink className={"nav-link sub-nav-link"}>Tab_6</NavLink>
-                        <NavLink className={"nav-link sub-nav-link add-nav-link"}><FontAwesomeIcon icon={faPlus}/></NavLink>
+                        <NavLink to="" className={"nav-link sub-nav-link"}>Tab_1</NavLink>
+                        <NavLink to="" className={"nav-link sub-nav-link"}>Tab_2</NavLink>
+                        <NavLink to="" className={"nav-link sub-nav-link"}>Tab_3</NavLink>
+                        <NavLink to="" className={"nav-link sub-nav-link"}>Tab_4</NavLink>
+                        <NavLink to="" className={"nav-link sub-nav-link"}>Tab_5</NavLink>
+                        <NavLink to="" className={"nav-link sub-nav-link"}>Tab_6</NavLink>
+                        <NavLink to="" className={"nav-link sub-nav-link add-nav-link"}><FontAwesomeIcon icon={faPlus}/></NavLink>
                     </ul>
                 </nav>
                 <div className="dash-body">
