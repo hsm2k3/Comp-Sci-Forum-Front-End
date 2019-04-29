@@ -9,6 +9,7 @@ import DashPage from "./components/pages/DashPage";
 import AboutPage from './components/pages/AboutPage';
 import ProfilePage from './components/pages/ProfilePage';
 import LoginPage from './components/pages/LoginPage';
+import SectionsPage from './components/pages/SectionsPage';
 
 class App extends Component {
     constructor(props){
@@ -26,6 +27,7 @@ class App extends Component {
                           <SideMenu/>
                           <Switch>
                               <Route path={"/"} component={HomePage} exact={true}/>
+                              <Route path={"/section"} component={SectionsPage}/>
                               <Route path={"/dash"} component={DashPage}/>
                               <Route path={"/about"} component={AboutPage}/>
                               <Route path={"/profile"} component={ProfilePage}/>
