@@ -1,10 +1,13 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 
 const SectionsList = props => (
     props.sections.map(section => {
         return <li className={"SectionListItem"} key={section.id}>
-            { section.code ? section.code : section.title }
+            <NavLink to={`/section/${section.code ? section.code : section.title}`}>
+                { section.code ? section.code : section.title }
+            </NavLink>
         </li>
     })
 );
