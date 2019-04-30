@@ -24,13 +24,14 @@ class SectionsPage extends Component {
         const prevSection = prevProps.match.params.section;
 
         if (section !== prevSection) {
-
-            this.fetchSectionData('code',section);
-            console.log(`%c beforeIf`,'color:orange',this.state.section);
-            if(!this.state.section) {
-                console.log(`%c afterIf`, 'color:orange', this.state.section);
-                this.fetchSectionData('title',section);
-            }
+            this.setState({section:null}, () => {
+                this.fetchSectionData('code',section);
+                console.log(`%c beforeIf`,'color:orange',this.state.section);
+                if(!this.state.section) {
+                    console.log(`%c afterIf`, 'color:orange', this.state.section);
+                    this.fetchSectionData('title',section);
+                }
+            })
         }
     }
 
