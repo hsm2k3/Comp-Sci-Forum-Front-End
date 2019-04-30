@@ -11,22 +11,36 @@ class SectionsPage extends Component {
     }
 
     componentDidMount() {
-        this.fetchSectionData();
+        const section = this.props.match.params.section;
+
+        this.fetchSectionData('code',section);
+        //  if section doesn't have code, search by title
+        if(!this.state.section)
+            this.fetchSectionData('title',section);
     }
 
     componentDidUpdate(prevProps) {
-        // Typical usage (don't forget to compare props):
-        if (this.props.match.params.section !== prevProps.match.params.section) {
-            this.fetchSectionData();
+        const section = this.props.match.params.section;
+        const prevSection = prevProps.match.params.section;
+
+        if (section !== prevSection) {
+
+            this.fetchSectionData('code',section);
+            console.log(`%c beforeIf`,'color:orange',this.state.section);
+            if(!this.state.section) {
+                console.log(`%c afterIf`, 'color:orange', this.state.section);
+                this.fetchSectionData('title',section);
+            }
         }
     }
 
-    fetchSectionData = () => {
-        fetch(`/api/sections/code/${this.props.match.params.section}`)
+    fetchSectionData = (searchAttribute, searchValue) => {
+        fetch(`/api/sections/${searchAttribute}/${searchValue}`)
             .then( res => {
                 return res.json();
             })
             .then(data => {
+                console.log(`%c section:${searchAttribute}Fetch`,'color:orange',data);
                 this.setState({ section: data});
             })
             .catch(() => console.error('SectionPage: unable to fetch data'))
