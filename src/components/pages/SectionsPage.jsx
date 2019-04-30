@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
+import ThreadsList from '../ThreadsList';
 // import PropTypes from 'prop-types';
 
 class SectionsPage extends Component {
@@ -38,11 +39,13 @@ class SectionsPage extends Component {
             <div id={"SectionsPage"}>
                 {
                     section &&
-                        <div className={'SectionsPageHeader'}>
-                            <h1>{section.code}</h1>
-                            <h3>{section.title}</h3>
-                            <p>{section.description}</p>
-                        </div>
+                        <Fragment>
+                            <div className={'SectionsPageHeader'}>
+                                <h3>{section.code}: {section.title}</h3>
+                                <p>{section.description}</p>
+                            </div>
+                            <ThreadsList sectionName={section.code ? section.code : section.title}/>
+                        </Fragment>
                 }
             </div>
         );
