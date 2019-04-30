@@ -67,6 +67,14 @@ ul{
     border-bottom: 2px solid #343a40;
     margin-bottom: 0;
 }
+#SectionsPage{
+    background-color: rgba(255,255,255,0.9);
+}
+
+.SectionPageHeader{
+    display: flex;
+    flex-direction: row;
+}
 
 .SectionListItem{
     list-style: none;
@@ -83,7 +91,6 @@ ul{
     color: black;
     text-decoration: none;
 }
-
 
 #LoginPage{
 
