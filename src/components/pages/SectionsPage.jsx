@@ -6,16 +6,23 @@ class SectionsPage extends Component {
     constructor(props){
         super(props);
         this.state = {
-            section: null
-        };
-    }
+            section: {
+                "1": null,
+                "2": null
+            },
+            switch: false   //  switch: if false, use section["1"], else use section["2"]
+        };                  //      this is used to get around state change being asynchronous
+    }                       //      and unreliable, use toggleSwitch with two section states
 
     componentDidMount() {
         const section = this.props.match.params.section;
 
         this.fetchSectionData('code',section);
+
+        console.log(this.state.section["1"],this.state.switch);
+
         //  if section doesn't have code, search by title
-        if(!this.state.section)
+        if(!this.state.section["1"])
             this.fetchSectionData('title',section);
     }
 
@@ -24,14 +31,15 @@ class SectionsPage extends Component {
         const prevSection = prevProps.match.params.section;
 
         if (section !== prevSection) {
-            this.setState({section:null}, () => {
-                this.fetchSectionData('code',section);
-                console.log(`%c beforeIf`,'color:orange',this.state.section);
-                if(!this.state.section) {
-                    console.log(`%c afterIf`, 'color:orange', this.state.section);
-                    this.fetchSectionData('title',section);
-                }
-            })
+            console.trace('section: ',section);
+            this.fetchSectionData('code',section);
+            //  if (switch false AND section[1] null) OR (switch true AND section[2] null)
+            console.log('%c Before big if','color:orange');
+            console.log(this.state.section);
+            if((!this.state.switch && !this.state.section["1"]) || (this.state.switch && !this.state.section["2"])) {
+                console.log('%c BIG IF STATEMENT','color:orange;');
+                this.fetchSectionData('title',section);
+            }
         }
     }
 
@@ -41,14 +49,43 @@ class SectionsPage extends Component {
                 return res.json();
             })
             .then(data => {
-                console.log(`%c section:${searchAttribute}Fetch`,'color:orange',data);
-                this.setState({ section: data});
+                let section = {...this.state.section};
+                console.trace(section);
+                if(!this.state.switch)
+                    section["1"] = data;
+                else
+                    section["2"] = data;
+                this.setState({ section: section });
+                this.nullifyNextState();
+                this.toggleSwitch();
             })
             .catch(() => console.error('SectionPage: unable to fetch data'))
     };
 
+    //  to get around state change being asynchronous and unreliable, use toggleSwitch with two section states
+    toggleSwitch = () => {
+        this.setState({switch: !this.state.switch});
+    };
+
+    nullifyNextState = () => {
+        let section = {...this.state.section};
+        if(this.state.switch)
+            section["1"] = null;
+        else
+            section["2"] = null;
+        this.setState({section:section});
+    };
+
+    getCurrentState = () => {
+        let section = {...this.state.section};
+        if(this.state.switch)
+            return section["1"];
+        else
+            return section["2"];
+    };
+
     render(){
-        const { section } = this.state;
+        const section = this.getCurrentState();
 
         return(
             <div id={"SectionsPage"}>
