@@ -168,7 +168,7 @@ a{
     border-left: 20px solid #CF873F;
     background-color: rgba(70,78,85,0.8);
     animation-name: threadsListItemHover;
-    animation-duration: .5s;
+    animation-duration: .25s;
     animation-timing-function: ease-out;
     cursor: pointer;
 }
