@@ -134,7 +134,21 @@ a{
     margin: 0;
     border-left: 20px solid #343a40;
     border-right: 20px solid #343a40;
+
 }
+@keyframes threadsListItemHover {
+    0%{
+        background-color: rgba(57, 64, 70, 0.8);
+        border-left: 20px solid #343a40;
+        border-right: 20px solid #343a40;
+    }
+    100%{
+        background-color: rgba(70,78,85,0.8);
+        border-right: 20px solid #CF873F;
+        border-left: 20px solid #CF873F;
+    }
+}
+
 .ThreadsListItem:first-child{
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
@@ -148,9 +162,12 @@ a{
     border-right: 20px solid #CF873F;
     border-left: 20px solid #CF873F;
     background-color: rgba(70,78,85,0.8);
+    animation-name: threadsListItemHover;
+    animation-duration: .3s;
 }
 .ThreadsListItem>h3{
     margin: 0;
+    color: #FFFFFF;
 }
 
 
