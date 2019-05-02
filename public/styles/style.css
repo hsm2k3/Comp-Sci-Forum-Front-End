@@ -89,7 +89,8 @@ a{
     flex-wrap: nowrap;
     padding: 10px;
     margin: 0;
-    color: rgba(255,255,255,.5);
+    /*color: rgb(255,255,255);*/
+    color: #CF873F;
     background-color: #343a40;
 
     height: 100%;
@@ -144,8 +145,8 @@ a{
 }
 
 .ThreadsListItem:hover{
-    border-right: 20px solid #17a2b8;
-    border-left: 20px solid #17a2b8;
+    border-right: 20px solid #CF873F;
+    border-left: 20px solid #CF873F;
     background-color: rgba(70,78,85,0.8);
 }
 .ThreadsListItem>h3{
