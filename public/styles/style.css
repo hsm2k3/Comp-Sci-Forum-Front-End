@@ -142,10 +142,18 @@ a{
         border-left: 20px solid #343a40;
         border-right: 20px solid #343a40;
     }
+    25%{
+        border-left: 30px solid #343a40;
+        border-right: 30px solid #343a40;
+    }
     50%{
         background-color: rgba(57, 64, 70, 0.8);
         border-left: 0 solid #343a40;
         border-right: 0 solid #343a40;
+    }
+    75% {
+        border-left: 30px solid #CF873F;
+        border-right: 30px solid #CF873F;
     }
     100%{
         background-color: rgba(70,78,85,0.8);
@@ -168,7 +176,7 @@ a{
     border-left: 20px solid #CF873F;
     background-color: rgba(70,78,85,0.8);
     animation-name: threadsListItemHover;
-    animation-duration: .25s;
+    animation-duration: .5s;
     animation-timing-function: ease-out;
     cursor: pointer;
 }
