@@ -142,6 +142,11 @@ a{
         border-left: 20px solid #343a40;
         border-right: 20px solid #343a40;
     }
+    50%{
+        background-color: rgba(57, 64, 70, 0.8);
+        border-left: 0 solid #343a40;
+        border-right: 0 solid #343a40;
+    }
     100%{
         background-color: rgba(70,78,85,0.8);
         border-right: 20px solid #CF873F;
@@ -163,7 +168,9 @@ a{
     border-left: 20px solid #CF873F;
     background-color: rgba(70,78,85,0.8);
     animation-name: threadsListItemHover;
-    animation-duration: .3s;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    cursor: pointer;
 }
 .ThreadsListItem>h3{
     margin: 0;
@@ -227,11 +234,10 @@ a{
 /*  Overwrite bootstrap */
 /*=============================================================*/
 .jumbotron{
-    color: #17a2b8;
+    color: #CF873F;
     background-color: rgba(57, 64, 70, 0.8);
     margin: 100px auto auto 150px;
     max-width: 50%;
-    /*max-height: 50%;*/
 }
 .jumbotron>h1{
     color: #FFF;
