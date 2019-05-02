@@ -30,7 +30,7 @@ a{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: rgba(80,80,80,0.6);
+    background-color: rgba(80,80,80,0.4);
 }
 
 #HomePage,
@@ -124,14 +124,15 @@ a{
 .ThreadsList{
     flex: 10 1;
     padding: 10px;
-    background-color: rgba(255,255,255,0.8);
 }
 .ThreadsListItem{
     list-style: none;
     height: 50px;
+    color: rgba(255,255,255,0.8);
     background-color: rgba(57, 64, 70, 0.8);
     margin: 0;
-    border: thick double #343a40;
+    border-left: 20px solid #343a40;
+    border-right: 20px solid #343a40;
 }
 .ThreadsListItem:first-child{
     border-top-left-radius: 3px;
@@ -141,8 +142,11 @@ a{
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
 }
+
 .ThreadsListItem:hover{
-    border: thick solid #17a2b8;
+    border-right: 20px solid #17a2b8;
+    border-left: 20px solid #17a2b8;
+    background-color: rgba(70,78,85,0.8);
 }
 .ThreadsListItem>h3{
     margin: 0;
