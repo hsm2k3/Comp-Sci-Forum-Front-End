@@ -96,7 +96,9 @@ class SectionsPage extends Component {
                                 <h3>{section.code}: {section.title}</h3>
                                 <p>{section.description}</p>
                             </div>
-                            <ThreadsList sectionName={section.code ? section.code : section.title}/>
+                            <ThreadsList sectionName={section.code ? section.code : section.title}
+                            sectionThreads={section.Threads}
+                            />
                         </Fragment>
                 }
             </div>
