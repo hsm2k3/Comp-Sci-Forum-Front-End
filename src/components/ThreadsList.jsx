@@ -2,10 +2,11 @@ import React from 'react';
 
 
 const ThreadsList = props => (
-    <div id={'ThreadsList'}>
-        <h1>Threads for {props.sectionName} go here!</h1>
-        <div> {JSON.stringify(props.sectionThreads)} </div>
-    </div>
+    props.threads.map( thread => {
+        return <li className={'ThreadsListItem'} key={thread.id} >
+            <h3>{thread.title}</h3>
+        </li>
+    })
 );
 
 

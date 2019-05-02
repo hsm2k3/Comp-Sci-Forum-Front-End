@@ -31,13 +31,9 @@ class SectionsPage extends Component {
         const prevSection = prevProps.match.params.section;
 
         if (section !== prevSection) {
-            console.trace('section: ',section);
             this.fetchSectionData('code',section);
             //  if (switch false AND section[1] null) OR (switch true AND section[2] null)
-            console.log('%c Before big if','color:orange');
-            console.log(this.state.section);
             if((!this.state.switch && !this.state.section["1"]) || (this.state.switch && !this.state.section["2"])) {
-                console.log('%c BIG IF STATEMENT','color:orange;');
                 this.fetchSectionData('title',section);
             }
         }
@@ -50,7 +46,6 @@ class SectionsPage extends Component {
             })
             .then(data => {
                 let section = {...this.state.section};
-                console.trace(section);
                 if(!this.state.switch)
                     section["1"] = data;
                 else
@@ -65,6 +60,7 @@ class SectionsPage extends Component {
     //  to get around state change being asynchronous and unreliable, use toggleSwitch with two section states
     toggleSwitch = () => {
         this.setState({switch: !this.state.switch});
+        console.log(this.state.section);
     };
 
     nullifyNextState = () => {
@@ -96,9 +92,12 @@ class SectionsPage extends Component {
                                 <h3>{section.code}: {section.title}</h3>
                                 <p>{section.description}</p>
                             </div>
-                            <ThreadsList sectionName={section.code ? section.code : section.title}
-                            sectionThreads={section.Threads}
-                            />
+                            {console.log('before', section.Threads)}
+                            <ul className={'ThreadsList'}>
+                                {
+                                    section.Threads && <ThreadsList threads={section.Threads} />
+                                }
+                            </ul>
                         </Fragment>
                 }
             </div>
