@@ -128,37 +128,51 @@ a{
 }
 .ThreadsListItem{
     list-style: none;
-    height: 50px;
+    /*height: 50px;*/
+    /*put minheight, maxheight, and make clickable to expand*/
     color: rgba(255,255,255,0.8);
     background-color: rgba(57, 64, 70, 0.8);
-    margin: 0;
     border-left: 20px solid #343a40;
     border-right: 20px solid #343a40;
-
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    padding-left:30px;
+    padding-right: 30px;
 }
 @keyframes threadsListItemHover {
     0%{
         background-color: rgba(57, 64, 70, 0.8);
         border-left: 20px solid #343a40;
         border-right: 20px solid #343a40;
+        padding-left: 30px;
+        padding-right: 30px;
     }
     25%{
         border-left: 30px solid #343a40;
         border-right: 30px solid #343a40;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     50%{
         background-color: rgba(57, 64, 70, 0.8);
         border-left: 0 solid #343a40;
         border-right: 0 solid #343a40;
+        padding-left: 50px;
+        padding-right: 50px;
     }
     75% {
         border-left: 30px solid #CF873F;
         border-right: 30px solid #CF873F;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     100%{
         background-color: rgba(70,78,85,0.8);
         border-right: 20px solid #CF873F;
         border-left: 20px solid #CF873F;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 
@@ -179,10 +193,28 @@ a{
     animation-duration: .5s;
     animation-timing-function: ease-out;
     cursor: pointer;
+    box-shadow: 0 0 5px white;
 }
 .ThreadsListItem>h3{
     margin: 0;
     color: #FFFFFF;
+}
+.ThreadsListItemHead{
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+}
+.ThreadsListItemTitle{
+
+    /*margin: 0 0 0 20px;*/
+}
+.ThreadsListItemAuthor{
+    color: #CF873F;
+    padding-left: 30px;
+}
+.ThreadsListItemContent{
+    flex: 3 1;
+    border-left: thick double #343a40;
 }
 
 
