@@ -89,7 +89,7 @@ class SectionsPage extends Component {
                     section &&
                         <Fragment>
                             <div className={'SectionsPageHeader'}>
-                                <h3>{section.code}: {section.title}</h3>
+                                <h4>{section.code}: {section.title}</h4>
                                 <p>{section.description}</p>
                             </div>
                             {console.log('before', section.Threads)}
