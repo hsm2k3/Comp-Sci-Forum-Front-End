@@ -81,10 +81,9 @@ a{
     flex-direction: row;
     align-items: center;
     flex-wrap: nowrap;
-
     border-bottom: 2px solid #343a40;
 }
-.SectionsPageHeader>h3{
+.SectionsPageHeader>h4{
     flex: 1 1;
     flex-wrap: nowrap;
     padding: 10px;
@@ -93,8 +92,11 @@ a{
     color: #CF873F;
     background-color: #343a40;
 
+    text-transform: uppercase;
     height: 100%;
     line-height: 1.7;
+    border-left: 20px solid #343a40;
+    border-right: 20px solid #343a40;
 }
 .SectionsPageHeader>p{
     flex: 3 1;
