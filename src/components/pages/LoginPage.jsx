@@ -3,10 +3,14 @@ import { Form, Button } from 'react-bootstrap';
 // import PropTypes from 'prop-types';
 
 class LoginPage extends Component {
+    handleSubmit = (event) => {
+        console.log('handleSubmit ran', event);
+    };
+
     render(){
         return(
             <div id={"LoginPage"}>
-                <Form>
+                <Form onSubmit={event => this.handleSubmit(event)}>
                     <h2>Login</h2>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
@@ -20,7 +24,7 @@ class LoginPage extends Component {
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" placeholder="Password" />
                     </Form.Group>
-                    <Button variant="dark">
+                    <Button variant="dark" type="submit">
                         Login
                     </Button>
                 </Form>
