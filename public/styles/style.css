@@ -295,6 +295,14 @@ a{
     width: 60px;
 }
 
+.WelcomeButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#goToLoginButton{
+    padding-right: 6px;
+}
 
 
 /*=============================================================*/
