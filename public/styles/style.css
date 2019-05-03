@@ -265,9 +265,7 @@ a{
 }
 .dash-body{
     flex: 1 1;
-    background-color: rgba(255,255,255,0.9);
     margin-left: 10px;
-    border-left: thick double #343a40;
     z-index: -1;
 }
 
