@@ -1,9 +1,11 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 
 const ThreadsList = props => (
     props.threads.map( thread => {
-        return <li className={'ThreadsListItem'} key={thread.id} >
+        return <NavLink className={'ThreadsListLink'} key={thread.id} to to={`/threads/${thread.id}`}>
+        	<li classname={'ThreadsListItem'}>
             <div className={"ThreadsListItemHead"}>
                 <div className={"ThreadsListItemTitle"}>
                     <h5>{ thread.title }</h5>
@@ -16,8 +18,11 @@ const ThreadsList = props => (
                 <p>{ thread.content }</p>
             </div>
         </li>
+    </NavLink>
     })
 );
+
+
 
 
 export default ThreadsList;

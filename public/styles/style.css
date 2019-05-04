@@ -38,7 +38,9 @@ a{
 #AboutPage,
 #ProfilePage,
 #LoginPage,
-#SectionsPage{
+#SectionsPage,
+#ThreadsPage
+{
     flex: 7 5;
     display: flex;
     flex-direction: row;
@@ -83,7 +85,31 @@ a{
     flex-wrap: nowrap;
     border-bottom: 2px solid #343a40;
 }
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+
+
 .SectionsPageHeader>h4{
+||||||| merged common ancestors
+||||||| merged common ancestors
+=======
+
+>>>>>>> Stashed changes
+.SectionsPageHeader>h3{
+=======
+
+||||||| merged common ancestors
+=======
+
+>>>>>>> Stashed changes
+||||||| merged common ancestors
+=======
+
+>>>>>>> Stashed changes
+.SectionsPageHeader>h3{
+>>>>>>> Stashed changes
     flex: 1 1;
     flex-wrap: nowrap;
     padding: 10px;
@@ -91,28 +117,79 @@ a{
     /*color: rgb(255,255,255);*/
     color: #CF873F;
     background-color: #343a40;
-
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     text-transform: uppercase;
+||||||| merged common ancestors
+
+=======
+>>>>>>> Stashed changes
+||||||| merged common ancestors
+
+=======
+>>>>>>> Stashed changes
+||||||| merged common ancestors
+
+=======
+>>>>>>> Stashed changes
+||||||| merged common ancestors
+
+=======
+>>>>>>> Stashed changes
     height: 100%;
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     line-height: 1.7;
     border-left: 20px solid #343a40;
     border-right: 20px solid #343a40;
+    line-height: 1.7;
+    line-height: 1.8;
+||||||| merged common ancestors
+    line-height: 1.7;
+=======
+    line-height: 1.8;
+>>>>>>> Stashed changes
+||||||| merged common ancestors
+    line-height: 1.7;
+=======
+    line-height: 1.8;
+>>>>>>> Stashed changes
+||||||| merged common ancestors
+    line-height: 1.7;
+=======
+    line-height: 1.8;
+>>>>>>> Stashed changes
+||||||| merged common ancestors
+    line-height: 1.7;
+=======
+    line-height: 1.8;
+>>>>>>> Stashed changes
 }
+
 .SectionsPageHeader>p{
     flex: 3 1;
     padding: 10px;
     border-left: thick double #343a40;
     border-right: thick double #343a40;
+    border-bottom: thick double #343a40;
+    border-top: thick double #343a40;
+
     height: 100%;
     margin: 0;
     background-color: rgba(115,127,140,0.8);
 }
+
 
 .SectionListItem{
     list-style: none;
     background-color: rgba(255,255,255,0.2);
     padding: 3px 0;
 }
+
 .SectionListItem:hover{
     background-color: rgba(255,255,255,0.5);
 }
@@ -124,10 +201,62 @@ a{
     text-decoration: none;
 }
 
+#ThreadsPage{
+    display: flex;
+    flex-direction: column;
+}
+
+.ThreadsPageHeader{
+
+    flex: 1 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    border-bottom: 2px solid #343a40;
+}
+
+.ThreadsPageDescription>p{
+    flex: 3 1;
+    padding: 10px;
+    border-left: thick double #343a40;
+    border-right: thick double #343a40;
+    border-top: thick double #343a40;
+    border-bottom: thick double #343a40;
+    height: 100%;
+    margin: 0;
+    color: rgba(255,255,255,0.8);
+    background-color: rgba(57, 64, 70, 0.8);
+    font-size: 18px;
+    
+}
+
+.ThreadsPageHeader>h3{
+    flex: 1 1;
+    flex-wrap: nowrap;
+    padding: 10px;
+    margin: 0;
+    /*color: rgb(255,255,255);*/
+    color: #CF873F;
+    background-color: #343a40;
+    font-size: 30px;
+    height: 100%;
+    line-height: 1.7;
+}
+
+.ThreadListItem{
+    list-style: none;
+    background-color: rgba(255,255,255,0.2);
+    padding: 3px 0;
+}
+
 .ThreadsList{
     flex: 10 1;
     padding: 10px;
 }
+
+
 .ThreadsListItem{
     list-style: none;
     /*height: 50px;*/
@@ -145,6 +274,7 @@ a{
     animation-duration: .5s;
     animation-timing-function: ease-out;
 }
+
 @keyframes threadsListItemDefault{
     0%{
         background-color: rgba(70,78,85,0.8);
@@ -169,6 +299,22 @@ a{
     }
 }
 
+.PostsList{
+    flex: 10 1;
+    padding: 5px;
+}
+
+.PostsListItem{
+	list-style: none;
+	background-color: rgba(115,127,140,0.8);
+	border-top: 0px solid #343a40;
+	text-align: left;
+	
+	
+}
+
+
+>>>>>>> Stashed changes
 @keyframes threadsListItemHover {
     0%{
         background-color: rgba(57, 64, 70, 0.8);

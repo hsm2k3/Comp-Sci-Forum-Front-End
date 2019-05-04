@@ -10,6 +10,7 @@ import AboutPage from './components/pages/AboutPage';
 import ProfilePage from './components/pages/ProfilePage';
 import LoginPage from './components/pages/LoginPage';
 import SectionsPage from './components/pages/SectionsPage';
+import ThreadsPage from './components/pages/ThreadsPage';
 
 class App extends Component {
     constructor(props){
@@ -32,6 +33,7 @@ class App extends Component {
                               <Route path={"/profile"} component={ProfilePage}/>
                               <Route path={"/login"} component={LoginPage}/>
                               <Route path={"/sections/:section"} component={SectionsPage}/>
+                              <Route path={"/threads/:thread"} component={ThreadsPage}/>
                               <Redirect to={"/"}/>
                           </Switch>
                       </div>
