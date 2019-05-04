@@ -33,7 +33,7 @@ class App extends Component {
                               <Route path={"/profile"} component={ProfilePage}/>
                               <Route path={"/login"} component={LoginPage}/>
                               <Route path={"/sections/:section"} component={SectionsPage}/>
-                              <Route path={"/threads/:thread"} component={ThreadsPage}/>
+                              <Route path={"/sections/:section/:thread"} component={ThreadsPage}/>
                               <Redirect to={"/"}/>
                           </Switch>
                       </div>

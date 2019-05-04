@@ -2,8 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 
-
-
 const ThreadsList = props => (
     props.threads.map( thread => {
         return <NavLink className={'ThreadsListLink'} key={thread.id} to={`/threads/${thread.id}`}>
@@ -23,9 +21,6 @@ const ThreadsList = props => (
     </NavLink>
     })
 );
-
-
-
 
 
 export default ThreadsList;

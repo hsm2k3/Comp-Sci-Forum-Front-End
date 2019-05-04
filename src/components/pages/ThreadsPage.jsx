@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import PostsList from '../PostsList';
-import ThreadsList from '../ThreadsList';
+import SectionsPageHeader from "./SectionsPage";
 // import PropTypes from 'prop-types';
 
 class ThreadsPage extends Component {
@@ -66,15 +66,7 @@ class ThreadsPage extends Component {
 					{
 						thread &&
 							<Fragment>
-								<div
-								className={'ThreadsPageHeader'}>
-									<h3>{thread.title}</h3>
-								</div>
-
-								<div className={'ThreadsPageDescription'}>
-									<p> {thread.content} </p>
-								</div>
-
+								<SectionsPageHeader section={section}/>
 								<ul className={'PostsList'}>
 									{
 										thread.Posts && <PostsList posts={thread.Posts} />
