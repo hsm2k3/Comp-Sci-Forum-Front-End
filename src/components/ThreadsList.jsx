@@ -2,10 +2,12 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 
+
+
 const ThreadsList = props => (
     props.threads.map( thread => {
-        return <NavLink className={'ThreadsListLink'} key={thread.id} to to={`/threads/${thread.id}`}>
-        	<li classname={'ThreadsListItem'}>
+        return <NavLink className={'ThreadsListLink'} key={thread.id} to={`/threads/${thread.id}`}>
+        	<li className={'ThreadsListItem'}>
             <div className={"ThreadsListItemHead"}>
                 <div className={"ThreadsListItemTitle"}>
                     <h5>{ thread.title }</h5>
@@ -21,6 +23,7 @@ const ThreadsList = props => (
     </NavLink>
     })
 );
+
 
 
 
