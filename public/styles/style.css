@@ -106,6 +106,8 @@ a{
     padding: 10px;
     border-left: thick double #343a40;
     border-right: thick double #343a40;
+    border-top: thick double #343a40;
+    border-bottom: thick double #343a40;
     height: 100%;
     margin: 0;
     background-color: rgba(115,127,140,0.8);
