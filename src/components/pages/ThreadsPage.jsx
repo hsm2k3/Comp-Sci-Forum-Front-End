@@ -60,31 +60,30 @@ class ThreadsPage extends Component {
 		render(){
 			const thread = this.getCurrentState();
 
-		return(
+			return(
 
-			<div id={"ThreadsPage"}>
-				{
-					
-					thread &&
-						<Fragment>
-							<div
-							className={'ThreadsPageHeader'}>
-								<h3>{thread.title}</h3>
-							</div>
+				<div id={"ThreadsPage"}>
+					{
+						thread &&
+							<Fragment>
+								<div
+								className={'ThreadsPageHeader'}>
+									<h3>{thread.title}</h3>
+								</div>
 
-							<div className={'ThreadsPageDescription'}>
-							<p> {thread.content} </p>
-							</div>
-							
-							<ul className={'PostsList'}>
-								{
-									thread.Posts && <PostsList posts={thread.Posts} />
-								}
-							</ul>
-						</Fragment>
-				}
+								<div className={'ThreadsPageDescription'}>
+									<p> {thread.content} </p>
+								</div>
+
+								<ul className={'PostsList'}>
+									{
+										thread.Posts && <PostsList posts={thread.Posts} />
+									}
+								</ul>
+							</Fragment>
+					}
 				</div>
-				);
+			);
 		};
 }
 

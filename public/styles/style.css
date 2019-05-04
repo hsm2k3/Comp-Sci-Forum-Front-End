@@ -39,7 +39,7 @@ a{
 #ProfilePage,
 #LoginPage,
 #SectionsPage,
-#ThreadsPage,
+#ThreadsPage
 {
     flex: 7 5;
     display: flex;

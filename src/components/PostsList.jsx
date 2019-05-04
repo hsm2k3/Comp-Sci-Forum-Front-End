@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
 
 const PostsList = props => (
@@ -7,6 +6,7 @@ const PostsList = props => (
         return <li className={"PostsListItem"} key={post.id}>
             <div className={'PostListItemContent'}>
                 <p>{post.content}</p>
+                {console.log('DEBUG:POSTS: ', post)}
             </div>
         </li>
 
