@@ -66,7 +66,7 @@ class ThreadsPage extends Component {
 					{
 						thread &&
 							<Fragment>
-								<SectionsPageHeader section={section}/>
+								<SectionsPageHeader section={"Section Test"}/>
 								<ul className={'PostsList'}>
 									{
 										thread.Posts && <PostsList posts={thread.Posts} />

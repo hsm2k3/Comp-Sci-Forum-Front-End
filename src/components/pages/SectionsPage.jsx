@@ -50,7 +50,6 @@ class SectionsPage extends Component {
                 return res.json();
             })
             .then(data => {
-                let section = {...this.state.section};
                 this.setState({ section: data });
             })
             .catch(() => console.error('SectionPage: unable to fetch data'))
@@ -75,7 +74,7 @@ class SectionsPage extends Component {
                             <SectionsPageHeader section={section}/>
                             <ul className={'ThreadsList'}>
                                 {
-                                    section.Threads && <ThreadsList threads={section.Threads} />
+                                    section.Threads && <ThreadsList threads={section.Threads} section={section} />
                                 }
                             </ul>
                         </Fragment>
