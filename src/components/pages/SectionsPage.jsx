@@ -6,34 +6,38 @@ class SectionsPage extends Component {
     constructor(props){
         super(props);
         this.state = {
-            section: {
-                "1": null,
-                "2": null
-            },
-            switch: false   //  switch: if false, use section["1"], else use section["2"]
-        };                  //      this is used to get around state change being asynchronous
-    }                       //      and unreliable, use toggleSwitch with two section states
+            section: [],
+        };
+    }
 
     componentDidMount() {
         const section = this.props.match.params.section;
 
-        this.fetchSectionData('code',section);
-
-        console.log(this.state.section["1"],this.state.switch);
+        //If section returned code
+        if(section.startsWith("CSC")){
+            this.fetchSectionData('code',section);
+        }
 
         //  if section doesn't have code, search by title
-        if(!this.state.section["1"])
+        else{
             this.fetchSectionData('title',section);
+        }
+            
     }
 
     componentDidUpdate(prevProps) {
         const section = this.props.match.params.section;
         const prevSection = prevProps.match.params.section;
 
-        if (section !== prevSection) {
-            this.fetchSectionData('code',section);
-            //  if (switch false AND section[1] null) OR (switch true AND section[2] null)
-            if((!this.state.switch && !this.state.section["1"]) || (this.state.switch && !this.state.section["2"])) {
+        //If update needed
+        if(section !== prevSection){
+            //If section returned code
+            if(section.startsWith("CSC")){
+                this.fetchSectionData('code',section);
+            }
+
+            //  if section doesn't have code, search by title
+            else{
                 this.fetchSectionData('title',section);
             }
         }
@@ -46,42 +50,21 @@ class SectionsPage extends Component {
             })
             .then(data => {
                 let section = {...this.state.section};
-                if(!this.state.switch)
-                    section["1"] = data;
-                else
-                    section["2"] = data;
-                this.setState({ section: section });
-                this.nullifyNextState();
-                this.toggleSwitch();
+                this.setState({ section: data });
             })
             .catch(() => console.error('SectionPage: unable to fetch data'))
-    };
 
-    //  to get around state change being asynchronous and unreliable, use toggleSwitch with two section states
-    toggleSwitch = () => {
-        this.setState({switch: !this.state.switch});
-        console.log(this.state.section);
-    };
 
-    nullifyNextState = () => {
-        let section = {...this.state.section};
-        if(this.state.switch)
-            section["1"] = null;
-        else
-            section["2"] = null;
-        this.setState({section:section});
     };
-
+        
     getCurrentState = () => {
         let section = {...this.state.section};
-        if(this.state.switch)
-            return section["1"];
-        else
-            return section["2"];
+        return section;
     };
 
     render(){
         const section = this.getCurrentState();
+          console.log('testing', section);
 
         return(
             <div id={"SectionsPage"}>

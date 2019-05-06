@@ -14,14 +14,14 @@ class ThreadsPage extends Component {
 	}
 
 
-	componentWillMount() {
+	componentDidMount() {
 		const thread = this.props.match.params.thread;
 		
 		this.fetchThreadData(thread);	
 		{console.log('before mount', thread)}
 	}
 
-	componentWillUpdate(prevProps) {
+	componentDidUpdate(prevProps) {
 		const thread = this.props.match.params.thread;
 		const prevThread = prevProps.match.params.thread;
 		if(thread !== prevThread) {
