@@ -159,7 +159,6 @@ a {
   flex-wrap: nowrap;
   padding: 10px;
   margin: 0;
-  /*color: rgb(255,255,255);*/
   color: #CF873F;
   background-color: #343a40;
   text-transform: uppercase;
@@ -172,10 +171,7 @@ a {
 .SectionsPageHeader > p {
   flex: 3 1;
   padding: 10px;
-  border-left: thick double #343a40;
-  border-right: thick double #343a40;
-  border-top: thick double #343a40;
-  border-bottom: thick double #343a40;
+  border: thick double #343a40;
   height: 100%;
   margin: 0;
   background-color: rgba(115, 127, 140, 0.8);
