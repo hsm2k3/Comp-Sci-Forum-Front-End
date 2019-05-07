@@ -1,0 +1,16 @@
+.SectionListItem{
+  list-style: none;
+  background-color: rgba(255,255,255,0.2);
+  padding: 3px 0;
+}
+
+.SectionListItem:hover{
+  background-color: rgba(255,255,255,0.5);
+}
+
+.SectionListLink,
+.SectionListLink:active,
+.SectionListLink:hover{
+  color: black;
+  text-decoration: none;
+}

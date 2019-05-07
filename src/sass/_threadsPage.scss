@@ -1,0 +1,43 @@
+#ThreadsPage{
+  display: flex;
+  flex-direction: column;
+}
+
+.ThreadsPageHeader{
+
+  flex: 1 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  border-bottom: 2px solid #343a40;
+}
+
+.ThreadsPageDescription>p{
+  flex: 3 1;
+  padding: 10px;
+  border-left: thick double #343a40;
+  border-right: thick double #343a40;
+  border-top: thick double #343a40;
+  border-bottom: thick double #343a40;
+  height: 100%;
+  margin: 0;
+  color: rgba(255,255,255,0.8);
+  background-color: rgba(57, 64, 70, 0.8);
+  font-size: 18px;
+
+}
+
+.ThreadsPageHeader>h3{
+  flex: 1 1;
+  flex-wrap: nowrap;
+  padding: 10px;
+  margin: 0;
+  /*color: rgb(255,255,255);*/
+  color: #CF873F;
+  background-color: #343a40;
+  font-size: 30px;
+  height: 100%;
+  line-height: 1.7;
+}

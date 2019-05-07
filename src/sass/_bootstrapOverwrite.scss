@@ -1,0 +1,32 @@
+/*=============================================================*/
+/*  Overwrite bootstrap */
+/*=============================================================*/
+.jumbotron{
+  color: #CF873F;
+  background-color: rgba(57, 64, 70, 0.8);
+  margin: 100px auto auto 150px;
+  max-width: 50%;
+}
+.jumbotron>h1{
+  color: #FFF;
+}
+.nav-links{
+  color: rgba(255,255,255,.5);
+}
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .show > .nav-link{
+  color: #17a2b8;
+}
+#LoginPage>form{
+  color: #17a2b8;
+  background-color: rgba(57, 64, 70, 0.8);
+  margin: 100px auto auto 150px;
+  max-width: 50%;
+  padding: 30px;
+  border-radius: 4px;
+}
+#LoginPage>form>h2{
+  color: #FFF;
+}
