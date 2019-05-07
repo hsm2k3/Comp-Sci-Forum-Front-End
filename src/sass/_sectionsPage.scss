@@ -1,0 +1,47 @@
+#SectionsPage{
+  flex: 7 5;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#SectionsPage{
+  display: flex;
+  flex-direction: column;
+}
+
+.SectionsPageHeader{
+  flex: 1 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-bottom: 2px solid #343a40;
+}
+
+.SectionsPageHeader>h4{
+  flex: 1 1;
+  flex-wrap: nowrap;
+  padding: 10px;
+  margin: 0;
+  /*color: rgb(255,255,255);*/
+  color: #CF873F;
+  background-color: #343a40;
+  text-transform: uppercase;
+  height: 100%;
+  line-height: 1.7;
+  border-left: 20px solid #343a40;
+  border-right: 20px solid #343a40;
+}
+
+.SectionsPageHeader>p{
+  flex: 3 1;
+  padding: 10px;
+  border-left: thick double #343a40;
+  border-right: thick double #343a40;
+  border-top: thick double #343a40;
+  border-bottom: thick double #343a40;
+  height: 100%;
+  margin: 0;
+  background-color: rgba(115,127,140,0.8);
+}
