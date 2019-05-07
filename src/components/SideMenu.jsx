@@ -29,7 +29,7 @@ class SideMenu extends Component {
             <aside id={"SideMenu"}>
                 <h5>Sections</h5>
                 <ul>
-                { this.state.sections && <SectionsList sections={sections} /> }
+                { sections && <SectionsList sections={sections} /> }
                 </ul>
             </aside>
         );

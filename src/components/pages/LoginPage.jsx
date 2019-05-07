@@ -32,7 +32,8 @@ class LoginPage extends Component {
                 console.log("%cLogin-user-debug", "color: purple");
                 console.log({user});
                 if(user){
-                    // this.props.getUser(user);
+                    this.props.setUser(user);
+                    console.log("TESTING setUser", user);
                     this.props.history.push("/profile");
                 }
             })

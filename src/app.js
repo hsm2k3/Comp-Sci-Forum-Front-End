@@ -16,19 +16,17 @@ class App extends Component {
     constructor(props){
         super(props);
         this.state = {
-            isLoading: true
+            user: null,
         }
     }
 
     componentDidMount() {
         fetch("/api/auth")
             .then(response => {
-                console.log(response);
                 return response.json();
             })
             .then(data => {
                 this.setState({user: data, isLoading: false});
-                console.log(data);
             })
             .catch(error => {
                 setTimeout(() => {
@@ -37,6 +35,10 @@ class App extends Component {
             }
         )
     }
+
+    setUserData = user => {
+        this.setState({ user: user })
+    };
 
     render() {
         return (
@@ -51,7 +53,7 @@ class App extends Component {
                               <Route path={"/dash"} component={DashPage}/>
                               <Route path={"/about"} component={AboutPage}/>
                               <Route path={"/profile"} component={ProfilePage}/>
-                              <Route path={"/login"} component={LoginPage}/>
+                              <Route path={"/login"} component={LoginPage} setUser={user => this.setUserData(user)}/>
                               <Route path={"/sections/:section"} component={SectionsPage} exact={true}/>
                               <Route path={"/sections/:section/:thread"} component={ThreadsPage}/>
                               <Redirect to={"/"}/>
