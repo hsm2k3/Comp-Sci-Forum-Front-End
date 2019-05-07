@@ -18,7 +18,7 @@ class ThreadsPage extends Component {
 		const thread = this.props.match.params.thread;
 		
 		this.fetchThreadData(thread);	
-		{console.log('before mount', thread)}
+		console.log('before mount', thread);
 	}
 
 	componentDidUpdate(prevProps) {
@@ -41,7 +41,6 @@ class ThreadsPage extends Component {
 			})
 			
 			.then(data => {
-				let thread = {...this.state.thread};
 				this.setState({thread : data });
 				
 			})

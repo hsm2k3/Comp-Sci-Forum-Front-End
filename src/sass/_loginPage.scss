@@ -1,3 +1,11 @@
-#goToLoginButton{
-  padding-right: 6px;
+#LoginPage>form{
+  color: #CF873F;
+  background-color: rgba(57, 64, 70, 0.8);
+  margin: 100px auto auto 150px;
+  max-width: 50%;
+  padding: 30px;
+  border-radius: 4px;
+}
+#LoginPage>form>h2{
+  color: #FFF;
 }

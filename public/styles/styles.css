@@ -101,8 +101,17 @@ a {
   justify-content: flex-start;
 }
 
-#goToLoginButton {
-  padding-right: 6px;
+#LoginPage > form {
+  color: #CF873F;
+  background-color: rgba(57, 64, 70, 0.8);
+  margin: 100px auto auto 150px;
+  max-width: 50%;
+  padding: 30px;
+  border-radius: 4px;
+}
+
+#LoginPage > form > h2 {
+  color: #FFF;
 }
 
 #SideMenu {
@@ -396,19 +405,6 @@ a {
   color: #17a2b8;
 }
 
-#LoginPage > form {
-  color: #17a2b8;
-  background-color: rgba(57, 64, 70, 0.8);
-  margin: 100px auto auto 150px;
-  max-width: 50%;
-  padding: 30px;
-  border-radius: 4px;
-}
-
-#LoginPage > form > h2 {
-  color: #FFF;
-}
-
 /*=============================================================*/
 /*  Overwrite Font Awesome */
 /*=============================================================*/
@@ -426,6 +422,10 @@ svg {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+#goToLoginButton {
+  padding-right: 6px;
 }
 
 /*# sourceMappingURL=styles.css.map */
