@@ -114,6 +114,11 @@ a {
   color: #FFF;
 }
 
+.form-control:focus {
+  border: 1px solid #17a2b8;
+  box-shadow: 0 0 5px 5px #17a2b8;
+}
+
 #SideMenu {
   flex: 1 1;
   min-width: 175px;
