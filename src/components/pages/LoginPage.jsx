@@ -13,6 +13,7 @@ class LoginPage extends Component {
 
 
     handleSubmit = event => {
+        console.log("Data submitted: ", this.state.email, this.state.password);
         event.preventDefault();
         fetch("/login", {
             method: "post",
