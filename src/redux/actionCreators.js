@@ -4,8 +4,6 @@ import {
     FETCH_SECTIONS_FAILURE
 } from './actions';
 
-import { fetchSections } from "../helpers/fetches";
-
 
 //  Sections action creators
 export const getSections = () => {

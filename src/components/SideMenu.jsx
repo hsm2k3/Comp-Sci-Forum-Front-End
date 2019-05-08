@@ -5,15 +5,11 @@ import SectionsList from './SectionsList';
 // import PropTypes from 'prop-types';
 
 
-import store from '../redux/store';
-
 class SideMenu extends Component {
 
     componentDidMount(){
         const { getSections } = this.props;
         getSections();
-
-        console.log("componentDidMount: ",store.getState())
     }
 
 
@@ -47,7 +43,5 @@ const mapDispatchToProps = dispatch => {
         getSections: () =>  dispatch(getSections())
     }
 };
-
-store.subscribe(state => console.log(state));
 
 export default connect(mapStateToProps, mapDispatchToProps)(SideMenu);

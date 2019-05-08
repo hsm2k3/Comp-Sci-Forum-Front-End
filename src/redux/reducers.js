@@ -15,18 +15,12 @@ const initialState = {
 const sections = (state = initialState, action) => {
     switch(action.type){
         case FETCH_SECTIONS_BEGIN:
-            console.log("Fetch began");
             return {
                 ...state,
                 loading: true,
                 error: null
             };
         case FETCH_SECTIONS_SUCCESS:
-            console.log("Fetch success", {action});
-            // return Object.assign({}, state, {
-            //     loading: false,
-            //     sections: action.payload.sections
-            // });
             return {
                 ...state,
                 loading: false,
