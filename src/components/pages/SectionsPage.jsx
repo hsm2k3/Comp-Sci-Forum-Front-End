@@ -11,67 +11,39 @@ class SectionsPage extends Component {
     componentDidMount() {
         const section = this.props.match.params.section;
         const { setCurrentSection, getThreads } = this.props;
-        setCurrentSection(this.props.match.params.section);
+
+        setCurrentSection(section);
+
         // getThreads(section.currentSection.id);
-
-
-        //If section returned code
-        if(section.startsWith("CSC")){
-            this.fetchSectionData('code',section);
-        }
-
-        //  if section doesn't have code, search by title
-        else{
-            this.fetchSectionData('title',section);
-        }
-            
     }
 
     componentDidUpdate(prevProps) {
         const section = this.props.match.params.section;
         const prevSection = prevProps.match.params.section;
 
+        console.log("Compare prevSection and section: ", prevSection, section);
+
         //If update needed
         if(section !== prevSection){
-            //If section returned code
-            if(section.startsWith("CSC")){
-                this.fetchSectionData('code',section);
-            }
-
-            //  if section doesn't have code, search by title
-            else{
-                this.fetchSectionData('title',section);
-            }
+            console.log("Run setCurrentSection");
+            this.props.setCurrentSection(section);
         }
     }
 
-    fetchSectionData = (searchAttribute, searchValue) => {
-        fetch(`/api/sections/${searchAttribute}/${searchValue}`)
-            .then( res => {
-                return res.json();
-            })
-            .then(data => {
-                this.setState({ section: data });
-            })
-            .catch(() => console.error('SectionPage: unable to fetch data'))
-
-
-    };
-
 
     render(){
-        const section = this.props.sections;
+        const section = this.props;
         console.log(section);
 
         return(
             <div id={"SectionsPage"}>
                 {
-                    section &&
+                    section && section.sections.currentSection &&
                         <Fragment>
-                            <SectionsPageHeader section={section}/>
+                             <SectionsPageHeader section={section.sections.currentSection}/>
                             <ul className={'ThreadsList'}>
                                 {
-                                    section.Threads && <ThreadsList threads={section.Threads} section={section} />
+                                    section.sections.currentSection.Threads && <ThreadsList threads={section.sections.currentSection.Threads} />
                                 }
                             </ul>
                         </Fragment>
