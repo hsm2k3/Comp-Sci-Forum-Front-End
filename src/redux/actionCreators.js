@@ -1,0 +1,21 @@
+import {
+    FETCH_SECTIONS_BEGIN,
+    FETCH_SECTIONS_SUCCESS,
+    FETCH_SECTIONS_FAILURE
+} from './actions';
+
+
+
+//  Sections action creators
+export const getSections = () => {
+    return(dispatch, getState) => {
+        dispatch({type: FETCH_SECTIONS_BEGIN});
+
+        fetch('/api/sections')
+            .then(res => {
+                return res.json()
+            })
+            .then(data => dispatch({type: FETCH_SECTIONS_SUCCESS, payload: data}))
+            .catch(error => dispatch({type: FETCH_SECTIONS_FAILURE}))
+    }
+};

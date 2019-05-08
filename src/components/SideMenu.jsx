@@ -1,29 +1,22 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { getSections } from '../redux/actionCreators';
 import SectionsList from './SectionsList';
 // import PropTypes from 'prop-types';
 
 
+import store from '../redux/store';
+
 class SideMenu extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            sections: []
-        };
-    }
 
     componentDidMount(){
-        fetch('/api/sections')
-            .then(res => {
-                return res.json()
-            })
-            .then(data => {
-                this.setState({ sections:data });
-            })
-            .catch(() => console.error('SideMenu: unable to fetch data'))
+        const { getSections } = this.props;
+        getSections();
+        console.log("componentDidMount: ",store.getState())
     }
 
     render(){
-        const { sections } = this.state;
+        const { sections } = this.props;
 
         return(
             <aside id={"SideMenu"}>
@@ -41,4 +34,16 @@ class SideMenu extends Component {
 // };
 
 
-export default SideMenu;
+const mapStateToProps = state => {
+    return {
+        sections: state.sections
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        getSections: () => {dispatch(getSections());}
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps())(SideMenu);
