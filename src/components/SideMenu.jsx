@@ -12,8 +12,10 @@ class SideMenu extends Component {
     componentDidMount(){
         const { getSections } = this.props;
         getSections();
+
         console.log("componentDidMount: ",store.getState())
     }
+
 
     render(){
         const { sections } = this.props;
@@ -22,7 +24,7 @@ class SideMenu extends Component {
             <aside id={"SideMenu"}>
                 <h5>Sections</h5>
                 <ul>
-                { sections && <SectionsList sections={sections} /> }
+                { sections && <SectionsList sections={sections.sections} /> }
                 </ul>
             </aside>
         );
@@ -42,8 +44,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getSections: () => {dispatch(getSections());}
+        getSections: () =>  dispatch(getSections())
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps())(SideMenu);
+store.subscribe(state => console.log(state));
+
+export default connect(mapStateToProps, mapDispatchToProps)(SideMenu);

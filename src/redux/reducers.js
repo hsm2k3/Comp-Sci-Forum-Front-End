@@ -1,3 +1,4 @@
+import { combineReducers } from 'redux';
 import {
     FETCH_SECTIONS_BEGIN,
     FETCH_SECTIONS_SUCCESS,
@@ -11,21 +12,26 @@ const initialState = {
     error: null
 };
 
-const appReducer = (state = initialState, action) => {
+const sections = (state = initialState, action) => {
     switch(action.type){
         case FETCH_SECTIONS_BEGIN:
+            console.log("Fetch began");
             return {
                 ...state,
                 loading: true,
                 error: null
             };
         case FETCH_SECTIONS_SUCCESS:
-            return Object.assign({}, state, {sections: action.payload.sections});
-            // return {
-            //     ...state,
+            console.log("Fetch success", {action});
+            // return Object.assign({}, state, {
             //     loading: false,
             //     sections: action.payload.sections
-            // };
+            // });
+            return {
+                ...state,
+                loading: false,
+                sections: action.payload.sections
+            };
         case FETCH_SECTIONS_FAILURE:
             return {
                 ...state,
@@ -37,6 +43,10 @@ const appReducer = (state = initialState, action) => {
             return state;
     }
 };
+
+const appReducer = combineReducers({
+    sections
+});
 
 
 export default appReducer;
