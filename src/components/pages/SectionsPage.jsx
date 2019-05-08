@@ -1,18 +1,19 @@
 import React, {Component, Fragment} from 'react';
+import { connect } from 'react-redux';
+import { getThreads } from '../../redux/actionCreators/threads_actionCreators';
+import { setCurrentSection } from '../../redux/actionCreators/sections_actionCreators';
 import ThreadsList from '../ThreadsList';
 import SectionsPageHeader from '../SectionsPageHeader';
 // import PropTypes from 'prop-types';
 
 class SectionsPage extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            section: [],
-        };
-    }
 
     componentDidMount() {
         const section = this.props.match.params.section;
+        const { setCurrentSection, getThreads } = this.props;
+        setCurrentSection(this.props.match.params.section);
+        // getThreads(section.currentSection.id);
+
 
         //If section returned code
         if(section.startsWith("CSC")){
@@ -56,15 +57,11 @@ class SectionsPage extends Component {
 
 
     };
-        
-    getCurrentState = () => {
-        let section = {...this.state.section};
-        return section;
-    };
+
 
     render(){
-        const section = this.getCurrentState();
-          console.log('testing', section);
+        const section = this.props.sections;
+        console.log(section);
 
         return(
             <div id={"SectionsPage"}>
@@ -88,4 +85,19 @@ class SectionsPage extends Component {
 //
 // };
 
-export default SectionsPage;
+const mapStateToProps = state => {
+    return {
+        sections: state.sections,
+        currentSection: state.currentSection,
+        threads: state.threads
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        getThreads: (section) =>  dispatch(getThreads(section)),
+        setCurrentSection: (section) => dispatch(setCurrentSection(section))
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SectionsPage);

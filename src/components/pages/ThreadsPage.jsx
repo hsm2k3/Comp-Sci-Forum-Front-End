@@ -13,7 +13,6 @@ class ThreadsPage extends Component {
 		};
 	}
 
-
 	componentDidMount() {
 		const thread = this.props.match.params.thread;
 		

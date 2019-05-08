@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { getSections } from '../redux/actionCreators';
+import { getSections } from '../redux/actionCreators/sections_actionCreators';
 import SectionsList from './SectionsList';
 // import PropTypes from 'prop-types';
 
@@ -14,13 +14,13 @@ class SideMenu extends Component {
 
 
     render(){
-        const { sections } = this.props;
+        const { sections } = this.props.sections;
 
         return(
             <aside id={"SideMenu"}>
                 <h5>Sections</h5>
                 <ul>
-                { sections && <SectionsList sections={sections.sections} /> }
+                { sections && <SectionsList sections={sections} /> }
                 </ul>
             </aside>
         );

@@ -1,9 +1,9 @@
-import { combineReducers } from 'redux';
 import {
     FETCH_SECTIONS_BEGIN,
     FETCH_SECTIONS_SUCCESS,
-    FETCH_SECTIONS_FAILURE
-} from './actions';
+    FETCH_SECTIONS_FAILURE,
+    SET_CURRENT_SECTION
+} from '../actions/sections_actions';
 
 
 const initialState = {
@@ -12,7 +12,7 @@ const initialState = {
     error: null
 };
 
-const sections = (state = initialState, action) => {
+export const sections = (state = initialState, action) => {
     switch(action.type){
         case FETCH_SECTIONS_BEGIN:
             return {
@@ -33,14 +33,13 @@ const sections = (state = initialState, action) => {
                 error: action.payload.error,
                 sections: []
             };
+        case SET_CURRENT_SECTION:
+            return {
+                ...state,
+                loading: false,
+                currentSection: action.payload.currentSection
+            };
         default:
             return state;
     }
 };
-
-const appReducer = combineReducers({
-    sections
-});
-
-
-export default appReducer;
