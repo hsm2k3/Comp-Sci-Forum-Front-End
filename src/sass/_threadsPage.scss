@@ -31,14 +31,19 @@
 
 }
 
-.ThreadsPageHeader>h3{
-  flex: 1 1;
-  flex-wrap: nowrap;
-  padding: 10px;
-  margin: 0;
-  color: $highlightColor2;
-  background-color: $primaryColor1;
-  font-size: 30px;
-  height: 100%;
-  line-height: 1.7;
+.ThreadsListHeader{
+  list-style: none;
+  /*put minheight, maxheight, and make clickable to expand*/
+  color: rgba(255,255,255,0.8);
+  background-color: rgba(57, 64, 70, 0.8);
+  border-left: 20px solid #343a40;
+  border-right: 20px solid #343a40;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  padding-left:30px;
+  padding-right: 30px;
+  animation-name: threadsListItemDefault;
+  animation-duration: .5s;
+  animation-timing-function: ease-out;
 }

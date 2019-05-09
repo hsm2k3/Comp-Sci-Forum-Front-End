@@ -35,7 +35,6 @@ export const getSections = () => {
 
 export const setCurrentSection = (section) => {
 //If section returned code
-    console.log("Section passed into setCurrentSection", section);
     return(dispatch, getState) => {
         if(section.startsWith("CSC")){
             fetch(`/api/sections/code/${section}`)
@@ -43,7 +42,6 @@ export const setCurrentSection = (section) => {
                     return res.json();
                 })
                 .then(data => {
-                    console.log("currentSectionFetched: code ", data);
                     dispatch({
                         type: SET_CURRENT_SECTION,
                         payload:{
@@ -60,7 +58,6 @@ export const setCurrentSection = (section) => {
                     return res.json();
                 })
                 .then(data => {
-                    console.log("currentSectionFetched: title", data);
                     dispatch({
                         type: SET_CURRENT_SECTION,
                         payload:{

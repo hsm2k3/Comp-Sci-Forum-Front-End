@@ -26,24 +26,21 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetch("/api/auth")
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
-                this.setState({user: data, isLoading: false});
-            })
-            .catch(error => {
-                setTimeout(() => {
-                    this.setState({isLoading: false})
-                }, 1000);
-            }
-        )
+        // fetch("/api/auth")
+        //     .then(response => {
+        //         return response.json();
+        //     })
+        //     .then(data => {
+        //         this.setState({user: data, isLoading: false});
+        //     })
+        //     .catch(error => {
+        //         setTimeout(() => {
+        //             this.setState({isLoading: false})
+        //         }, 1000);
+        //     }
+        // )
     }
 
-    setUserData = user => {
-        this.setState({ user: user })
-    };
 
     render() {
         return (
@@ -59,9 +56,9 @@ class App extends Component {
                                     <Route path={"/dash"} component={DashPage}/>
                                     <Route path={"/about"} component={AboutPage}/>
                                     <Route path={"/profile"} component={ProfilePage}/>
-                                    <Route path={"/login"} component={LoginPage} setUser={user => this.setUserData(user)}/>
+                                    <Route path={"/login"} component={LoginPage} />
                                     <Route path={"/sections/:section"} component={SectionsPage} exact={true}/>
-                                    <Route path={"/sections/:section/:thread"} component={ThreadsPage}/>
+                                    <Route path={"/sections/:section/:thread"} component={ThreadsPage} exact={true}/>
                                     <Redirect to={"/"}/>
                                 </Switch>
                             </div>

@@ -1,81 +1,67 @@
 import React, {Component, Fragment} from 'react';
+import { connect } from 'react-redux';
+import { setCurrentThread } from '../../redux/actionCreators/threads_actionCreators';
 import PostsList from '../PostsList';
-import SectionsPageHeader from "./SectionsPage";
+import SectionsPageHeader from "../SectionsPageHeader";
+import ThreadsListItem from '../ThreadsListItem';
 // import PropTypes from 'prop-types';
 
 class ThreadsPage extends Component {
-	constructor(props){
-		super(props);
-		this.state = {
-			thread: [],
-			hasErrored: false,
-			isLoading: false
-		};
-	}
 
 	componentDidMount() {
 		const thread = this.props.match.params.thread;
-		
-		this.fetchThreadData(thread);	
-		console.log('before mount', thread);
+		const { setCurrentThread } = this.props;
+
+		if(thread)
+			setCurrentThread(thread);
 	}
 
 	componentDidUpdate(prevProps) {
 		const thread = this.props.match.params.thread;
 		const prevThread = prevProps.match.params.thread;
+		const { setCurrentThread } = this.props;
+
 		if(thread !== prevThread) {
-			this.fetchThreadData(thread);
+			setCurrentThread(thread);
 		}
 	}
 
-	fetchThreadData = (searchValue) => {
-		this.setState({isLoading: true});
-		fetch(`/api/threads/id/${searchValue}`)
-			
-			.then( res => {
-				if(!res.ok)
-					throw Error(res.statusText);
-				this.setState({isLoading:false});
-				return res.json();
-			})
-			
-			.then(data => {
-				this.setState({thread : data });
-				
-			})
-			.catch(() => {
-			console.error('ThreadsPage: unable to fetch data');
-			this.setState({hasErrored:true});
-			});
 
+	render(){
+		const { currentSection, currentThread } = this.props;
+
+		return(
+
+			<div id={"ThreadsPage"}>
+				{
+					currentSection && currentThread &&
+						<Fragment>
+							<SectionsPageHeader section={currentSection}/>
+							<ThreadsListItem className={"ThreadsListHeader"} title={currentThread.title}
+                                             user_id={currentThread.user_id} content={currentThread.content}/>
+							<ul className={'PostsList'}>
+								{
+									currentThread && <PostsList posts={currentThread.Posts} />
+								}
+							</ul>
+						</Fragment>
+				}
+			</div>
+		);
 	};
-
-	getCurrentState = () => {
-		let thread = {...this.state.thread};
-		return thread;
-	};
-
-		render(){
-			const thread = this.getCurrentState();
-
-			return(
-
-				<div id={"ThreadsPage"}>
-					{
-						thread &&
-							<Fragment>
-								<SectionsPageHeader section={"Section Test"}/>
-								<ul className={'PostsList'}>
-									{
-										thread.Posts && <PostsList posts={thread.Posts} />
-									}
-								</ul>
-							</Fragment>
-					}
-				</div>
-			);
-		};
 }
 
+const mapStateToProps = state => {
+	return {
+		currentSection: state.sections.currentSection,
+		currentThread: state.threads.currentThread
+	}
+};
 
-export default ThreadsPage;
+const mapDispatchToProps = dispatch => {
+	return {
+		setCurrentThread: (threadId) => dispatch(setCurrentThread(threadId))
+	}
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ThreadsPage);

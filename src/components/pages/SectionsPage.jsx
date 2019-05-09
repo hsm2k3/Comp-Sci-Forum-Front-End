@@ -1,6 +1,5 @@
 import React, {Component, Fragment} from 'react';
 import { connect } from 'react-redux';
-import { getThreads } from '../../redux/actionCreators/threads_actionCreators';
 import { setCurrentSection } from '../../redux/actionCreators/sections_actionCreators';
 import ThreadsList from '../ThreadsList';
 import SectionsPageHeader from '../SectionsPageHeader';
@@ -10,40 +9,37 @@ class SectionsPage extends Component {
 
     componentDidMount() {
         const section = this.props.match.params.section;
-        const { setCurrentSection, getThreads } = this.props;
+        const { setCurrentSection } = this.props;
 
-        setCurrentSection(section);
+        if(section)
+            setCurrentSection(section);
 
-        // getThreads(section.currentSection.id);
     }
 
     componentDidUpdate(prevProps) {
         const section = this.props.match.params.section;
         const prevSection = prevProps.match.params.section;
 
-        console.log("Compare prevSection and section: ", prevSection, section);
 
         //If update needed
         if(section !== prevSection){
-            console.log("Run setCurrentSection");
             this.props.setCurrentSection(section);
         }
     }
 
 
     render(){
-        const section = this.props;
-        console.log(section);
+        const { currentSection } = this.props;
 
         return(
             <div id={"SectionsPage"}>
                 {
-                    section && section.sections.currentSection &&
+                    currentSection &&
                         <Fragment>
-                             <SectionsPageHeader section={section.sections.currentSection}/>
+                             <SectionsPageHeader section={currentSection}/>
                             <ul className={'ThreadsList'}>
                                 {
-                                    section.sections.currentSection.Threads && <ThreadsList threads={section.sections.currentSection.Threads} />
+                                    currentSection.Threads && <ThreadsList section={currentSection} threads={currentSection.Threads} />
                                 }
                             </ul>
                         </Fragment>
@@ -59,15 +55,14 @@ class SectionsPage extends Component {
 
 const mapStateToProps = state => {
     return {
-        sections: state.sections,
-        currentSection: state.currentSection,
-        threads: state.threads
+        sections: state.sections.sections,
+        currentSection: state.sections.currentSection,
+        threads: state.sections.threads
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        getThreads: (section) =>  dispatch(getThreads(section)),
         setCurrentSection: (section) => dispatch(setCurrentSection(section))
     }
 };
