@@ -1,3 +1,5 @@
+@import 'variables';
+
 .PostsList{
   flex: 10 1;
   padding: 5px;
@@ -5,7 +7,11 @@
 
 .PostsListItem{
   list-style: none;
-  background-color: rgba(115,127,140,0.8);
-  border-top: 0px solid #343a40;
+  background-color: $glassPanelColor;
   text-align: left;
+}
+
+.PostsListItemContent>p{
+  margin: 0;
+  padding: 0;
 }
