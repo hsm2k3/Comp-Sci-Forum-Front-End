@@ -301,6 +301,9 @@ a {
   flex: 10 1;
   padding: 10px;
 }
+.ThreadsList a:hover {
+  text-decoration: none;
+}
 
 .ThreadsListItem {
   list-style: none;
