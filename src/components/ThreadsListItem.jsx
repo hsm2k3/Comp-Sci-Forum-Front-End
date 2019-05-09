@@ -1,9 +1,8 @@
-import React, { Fragment } from 'react';
-import {NavLink} from "react-router-dom";
+import React from 'react';
 
 
 const ThreadsListItem = props => (
-    <div className={'ThreadsListItem'}>
+    <div className={props.class ? props.class : `ThreadsListItem`}>
         <div className={"ThreadsListItemHead"}>
             <div className={"ThreadsListItemTitle"}>
                 <h5>{ props.title }</h5>

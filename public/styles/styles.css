@@ -305,7 +305,18 @@ a {
   text-decoration: none;
 }
 
-.ThreadsListItem {
+.ThreadsListItem-Link:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.ThreadsListItem-Link:last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.ThreadsListItem,
+.ThreadsListItem-NoHover {
   list-style: none;
   /*put minheight, maxheight, and make clickable to expand*/
   color: rgba(255, 255, 255, 0.8);
@@ -317,19 +328,12 @@ a {
   text-align: left;
   padding-left: 30px;
   padding-right: 30px;
+}
+
+.ThreadsListItem {
   animation-name: threadsListItemDefault;
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
-}
-
-.ThreadsListItem:first-child {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-}
-
-.ThreadsListItem:last-child {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
 }
 
 .ThreadsListItem:hover {
