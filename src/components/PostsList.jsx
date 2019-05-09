@@ -1,14 +1,10 @@
 import React from 'react';
+import PostsListItem from './PostsListItem'
 
 
 const PostsList = props => (
     props.posts.map( post => {
-        return <li className={"PostsListItem"} key={post.id}>
-            <div className={'PostListItemContent'}>
-                <p>{post.content}</p>
-                {console.log('DEBUG:POSTS: ', post)}
-            </div>
-        </li>
+        return <PostsListItem id={post.id} content={post.content} />
 
     })
 );
