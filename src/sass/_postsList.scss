@@ -1,5 +1,12 @@
 @import 'variables';
 
+.orangeBorder{
+  flex: 10 1;
+  display: flex;
+  border-left: 2px solid $highlightColor2;
+  border-right: 2px solid $highlightColor2;
+}
+
 .PostsList{
   flex: 10 1;
   border-left: 20px solid #343a40;
@@ -23,18 +30,18 @@
     h5{
       color: $highlightColor2;
       padding-left: 20px;
-      margin: 10px;
+      margin: 5px;
     }
   }
   .PostsListItemBody{
     flex: 5 1;
 
     p{
-      margin: 10px;
+      margin: 5px;
       padding: 0 0 0 40px;
     }
   }
 }
 .PostsListItem:first-child{
-  margin-top: 0;
+  margin-top: 0px;
 }

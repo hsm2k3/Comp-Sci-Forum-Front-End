@@ -15,11 +15,6 @@ a {
   outline: none;
 }
 
-#DashPage {
-  display: flex;
-  flex-direction: column;
-}
-
 #DashPage > nav {
   height: 40px;
   margin-left: 2px;
@@ -101,6 +96,11 @@ a {
   justify-content: flex-start;
 }
 
+#DashPage {
+  display: flex;
+  flex-direction: column;
+}
+
 #LoginPage > form {
   color: #CF873F;
   background-color: rgba(57, 64, 70, 0.8);
@@ -175,6 +175,15 @@ a {
   height: 100%;
   margin: 0;
   background-color: rgba(115, 127, 140, 0.8);
+}
+
+.SectionsPageBody {
+  flex: 10 1;
+}
+
+#ThreadsListEnd {
+  background-color: #343a40;
+  height: 30px;
 }
 
 .SectionListItem {
@@ -299,7 +308,6 @@ a {
 }
 .ThreadsList {
   flex: 10 1;
-
 }
 .ThreadsList a:hover {
   text-decoration: none;
@@ -337,7 +345,9 @@ a {
 }
 
 .ThreadsListItem-NoHover {
-  border-bottom: 3px solid #343a40;
+  border-bottom: 15px solid transparent;
+  border-left: 20px solid #CF873F;
+  border-right: 20px solid #CF873F;
 }
 
 .ThreadsListItem:hover {
@@ -382,6 +392,13 @@ a {
   /*border-left: thick double #343a40;*/
 }
 
+.orangeBorder {
+  flex: 10 1;
+  display: flex;
+  border-left: 2px solid #CF873F;
+  border-right: 2px solid #CF873F;
+}
+
 .PostsList {
   flex: 10 1;
   border-left: 20px solid #343a40;
@@ -406,18 +423,18 @@ a {
 .PostsListItem .PostsListItemHead h5 {
   color: #CF873F;
   padding-left: 20px;
-  margin: 10px;
+  margin: 5px;
 }
 .PostsListItem .PostsListItemBody {
   flex: 5 1;
 }
 .PostsListItem .PostsListItemBody p {
-  margin: 10px;
+  margin: 5px;
   padding: 0 0 0 40px;
 }
 
 .PostsListItem:first-child {
-  margin-top: 0;
+  margin-top: 0px;
 }
 
 /*=============================================================*/

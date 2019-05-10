@@ -4,7 +4,6 @@ import PostsListItem from './PostsListItem'
 
 const PostsList = props => (
     props.posts.map( post => {
-        console.log(props);
         return <PostsListItem
             key={post.id}
             id={post.id}

@@ -36,12 +36,15 @@ class SectionsPage extends Component {
                 {
                     currentSection &&
                         <Fragment>
-                             <SectionsPageHeader section={currentSection}/>
-                            <ul className={'ThreadsList'}>
-                                {
-                                    currentSection.Threads && <ThreadsList section={currentSection} threads={currentSection.Threads} />
-                                }
-                            </ul>
+                            <SectionsPageHeader section={currentSection}/>
+                            <div className={'SectionsPageBody'}>
+                                <ul className={'ThreadsList'}>
+                                    {
+                                        currentSection.Threads && <ThreadsList section={currentSection} threads={currentSection.Threads} />
+                                    }
+                                </ul>
+                                <div id={'ThreadsListEnd'}></div>
+                            </div>
                         </Fragment>
                 }
             </div>

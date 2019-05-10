@@ -39,11 +39,13 @@ class ThreadsPage extends Component {
 							<SectionsPageHeader section={currentSection}/>
 							<ThreadsListItem class={"ThreadsListItem-NoHover"} title={currentThread.title}
                                              user_id={currentThread.user_id} content={currentThread.content}/>
-							<ul className={'PostsList'}>
-								{
-									currentThread && <PostsList posts={currentThread.Posts} />
-								}
-							</ul>
+							 <div className="orangeBorder">
+								 <ul className={'PostsList'}>
+									 {
+										 currentThread && <PostsList posts={currentThread.Posts} />
+									 }
+								 </ul>
+							 </div>
 						</Fragment>
 				}
 			</div>
