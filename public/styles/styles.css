@@ -299,6 +299,7 @@ a {
 }
 .ThreadsList {
   flex: 10 1;
+
 }
 .ThreadsList a:hover {
   text-decoration: none;
