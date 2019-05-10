@@ -17,6 +17,8 @@
   align-items: center;
   flex-wrap: nowrap;
   border-bottom: 2px solid #343a40;
+  border-left: 20px solid #343a40;
+  border-right: 20px solid #343a40;
 }
 
 .SectionsPageHeader>h4{
@@ -29,8 +31,6 @@
   text-transform: uppercase;
   height: 100%;
   line-height: 1.7;
-  border-left: 20px solid #343a40;
-  border-right: 20px solid #343a40;
 }
 
 .SectionsPageHeader>p{

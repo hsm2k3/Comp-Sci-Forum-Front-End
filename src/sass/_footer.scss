@@ -1,5 +1,7 @@
+@import 'variables';
+
 #Footer{
   height: 40px;
   color: rgba(255,255,255,.5);
-  background-color: #413B35;
+  background-color: $primaryColor1;
 }

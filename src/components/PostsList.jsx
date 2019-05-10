@@ -4,8 +4,12 @@ import PostsListItem from './PostsListItem'
 
 const PostsList = props => (
     props.posts.map( post => {
-        return <PostsListItem id={post.id} content={post.content} />
-
+        console.log(props);
+        return <PostsListItem
+            key={post.id}
+            id={post.id}
+            content={post.content}
+            user={post.user_id} />
     })
 );
 

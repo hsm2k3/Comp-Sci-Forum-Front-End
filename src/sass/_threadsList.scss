@@ -2,7 +2,6 @@
 
 .ThreadsList{
   flex: 10 1;
-  padding: 10px;
 
   a:hover{
     text-decoration: none;
@@ -37,6 +36,9 @@
   animation-duration: .5s;
   animation-timing-function: ease-out;
 }
+.ThreadsListItem-NoHover{
+  border-bottom: 3px solid #343a40;
+}
 
 .ThreadsListItem:hover{
   border-right: 20px solid #CF873F;
@@ -63,7 +65,6 @@
 }
 .ThreadsListItemTitle{
   color: rgba(255,255,255,0.8);
-  /*margin: 0 0 0 20px;*/
 }
 .ThreadsListItemAuthor{
   color: #CF873F;

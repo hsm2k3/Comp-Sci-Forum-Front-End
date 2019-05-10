@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const ThreadsListItem = props => (
-    <div className={props.class ? props.class : `ThreadsListItem`}>
+    <li className={props.class ? props.class : `ThreadsListItem`}>
         <div className={"ThreadsListItemHead"}>
             <div className={"ThreadsListItemTitle"}>
                 <h5>{ props.title }</h5>
@@ -14,7 +14,7 @@ const ThreadsListItem = props => (
         <div className={"ThreadsListItemContent"}>
             <p>{ props.content }</p>
         </div>
-    </div>
+    </li>
 );
 
 

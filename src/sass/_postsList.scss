@@ -2,16 +2,39 @@
 
 .PostsList{
   flex: 10 1;
-  padding: 5px;
+  border-left: 20px solid #343a40;
+  border-right: 20px solid #343a40;
+  background-color: rgba(57, 64, 70, 0.8);
+  display: flex;
+  flex-direction: column;
 }
 
 .PostsListItem{
+  display: flex;
+  flex-direction: column;
+  color: rgba(255, 255, 255, 0.8);;
+  background-color: $primaryColor1;
   list-style: none;
-  background-color: $glassPanelColor;
   text-align: left;
-}
+  margin-top: 3px;
 
-.PostsListItemContent>p{
-  margin: 0;
-  padding: 0;
+  .PostsListItemHead{
+    flex: 1 1;
+    h5{
+      color: $highlightColor2;
+      padding-left: 20px;
+      margin: 10px;
+    }
+  }
+  .PostsListItemBody{
+    flex: 5 1;
+
+    p{
+      margin: 10px;
+      padding: 0 0 0 40px;
+    }
+  }
+}
+.PostsListItem:first-child{
+  margin-top: 0;
 }
