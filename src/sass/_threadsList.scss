@@ -1,3 +1,4 @@
+@import 'variables';
 @import "threadsListAnimations";
 
 .ThreadsList{
@@ -42,6 +43,15 @@
   border-right: 20px solid #CF873F;
 }
 
+
+.accents{
+  font-size: 2rem;
+  color: $primaryColor1;
+}
+.ThreadsListItem:hover .accents{
+  color: $highlightColor2;
+}
+
 .ThreadsListItem:hover{
   border-right: 20px solid #CF873F;
   border-left: 20px solid #CF873F;
@@ -69,11 +79,13 @@
   color: rgba(255,255,255,0.8);
 }
 .ThreadsListItemAuthor{
+  font-size: .85rem;
   color: #CF873F;
   padding-left: 30px;
 }
 .ThreadsListItemContent{
+  font-size: .9rem;
   color: rgba(255,255,255,0.8);
   flex: 3 1;
-  /*border-left: thick double #343a40;*/
+  margin: 0 20px;
 }

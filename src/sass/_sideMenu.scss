@@ -1,3 +1,5 @@
+@import 'variables';
+
 #SideMenu{
   flex: 1 1;
   min-width: 175px;
@@ -9,4 +11,19 @@
   background-color: #17a2b8;
   border-bottom: 2px solid #343a40;
   margin-bottom: 0;
+}
+
+#SideMenu{
+  .form-control {
+    text-align: center;
+    border: none;
+    margin: 0;
+    border-radius: 0;
+    border-bottom: 2px solid $primaryColor1;
+  }
+  .form-control:focus{
+    border: 1px solid $highlightColor2;
+    box-shadow: 0 0 5px 5px $highlightColor2;
+  }
+
 }

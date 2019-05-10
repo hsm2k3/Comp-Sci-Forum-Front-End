@@ -133,6 +133,18 @@ a {
   margin-bottom: 0;
 }
 
+#SideMenu .form-control {
+  text-align: center;
+  border: none;
+  margin: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #343a40;
+}
+#SideMenu .form-control:focus {
+  border: 1px solid #CF873F;
+  box-shadow: 0 0 5px 5px #CF873F;
+}
+
 #SectionsPage {
   flex: 7 5;
   display: flex;
@@ -350,6 +362,15 @@ a {
   border-right: 20px solid #CF873F;
 }
 
+.accents {
+  font-size: 2rem;
+  color: #343a40;
+}
+
+.ThreadsListItem:hover .accents {
+  color: #CF873F;
+}
+
 .ThreadsListItem:hover {
   border-right: 20px solid #CF873F;
   border-left: 20px solid #CF873F;
@@ -382,25 +403,29 @@ a {
 }
 
 .ThreadsListItemAuthor {
+  font-size: 0.85rem;
   color: #CF873F;
   padding-left: 30px;
 }
 
 .ThreadsListItemContent {
+  font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.8);
   flex: 3 1;
-  /*border-left: thick double #343a40;*/
+  margin: 0 20px;
 }
 
 .orangeBorder {
   flex: 10 1;
   display: flex;
+  flex-direction: column;
   border-left: 2px solid #CF873F;
   border-right: 2px solid #CF873F;
 }
 
 .PostsList {
   flex: 1 1;
+  border-top: 2px solid #343a40;
   border-left: 20px solid #343a40;
   border-right: 20px solid #343a40;
   background-color: rgba(57, 64, 70, 0.8);

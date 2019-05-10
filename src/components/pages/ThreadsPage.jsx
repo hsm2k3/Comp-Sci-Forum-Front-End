@@ -37,9 +37,9 @@ class ThreadsPage extends Component {
 					currentSection && currentThread &&
 						<Fragment>
 							<SectionsPageHeader section={currentSection}/>
-							<ThreadsListItem class={"ThreadsListItem-NoHover"} title={currentThread.title}
-                                             user_id={currentThread.user_id} content={currentThread.content}/>
-							 <div className="orangeBorder">
+							<div className="orangeBorder">
+								<ThreadsListItem class={"ThreadsListItem-NoHover"} title={currentThread.title}
+												 user_id={currentThread.user_id} content={currentThread.content}/>
 								 <ul className={'PostsList'}>
 									 {
 										 currentThread && <PostsList posts={currentThread.Posts} />

@@ -11,9 +11,11 @@ const ThreadsListItem = props => (
                 <p>Posted by {props.user_id}</p>
             </div>
         </div>
+        {props.class ? null : <div className={'accents'}>() => (</div>}
         <div className={"ThreadsListItemContent"}>
             <p>{ props.content }</p>
         </div>
+        {props.class ? null : <div className={'accents'}>)</div>}
     </li>
 );
 
