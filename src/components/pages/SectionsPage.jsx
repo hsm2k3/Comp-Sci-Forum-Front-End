@@ -40,7 +40,7 @@ class SectionsPage extends Component {
                             <div className={'SectionsPageBody'}>
                                 <ul className={'ThreadsList'}>
                                     {
-                                        currentSection.Threads && <ThreadsList section={currentSection} threads={currentSection.Threads} />
+                                        currentSection.Threads && <ThreadsList />
                                     }
                                 </ul>
                                 <div id={'ThreadsListEnd'}></div>

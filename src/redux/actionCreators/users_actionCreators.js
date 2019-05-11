@@ -17,7 +17,7 @@ export const getUser = user_id => {
                 dispatch({
                     type: FETCH_USER_SUCCESS,
                     payload:{
-                        threads: data
+                        user: data
                     }
                 })
             })
