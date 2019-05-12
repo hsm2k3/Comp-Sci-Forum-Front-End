@@ -21,6 +21,7 @@ export const users = (state = initialState, action) => {
         case FETCH_USER_SUCCESS:
             return{
                 ...state,
+                user: action.payload.user,
                 loading:false,
                 error: null
             };
