@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import {Button, FormControl} from "react-bootstrap";
 import {withRouter} from "react-router-dom";
+import {addThread} from "../redux/actionCreators/threads_actionCreators";
 
 
 class ThreadsListNewItem extends Component{
@@ -26,31 +27,12 @@ class ThreadsListNewItem extends Component{
     };
 
     handleSubmit = event => {
-        const {currentSection} = this.props;
+        const {currentSection, addThread} = this.props;
+        const {title_input,content_input} = this.state;
 
         event.preventDefault();
-        fetch("/api/threads", {
-            method: "post",
-            headers: new Headers({
-                'Content-Type': 'application/json'
-            }),
-            body: JSON.stringify({
-                title: this.state.title_input,
-                content: this.state.content_input,
-                user_id: 1, // todo: remove hard-coded user_id and replace with logged in user once login works
-                section_id: currentSection.id
-            })
-        })
-            .then(response => {
-                console.log(response);
-                // return response.json();
-            })
-            .then(() => {
-                this.props.history.push(`/sections/${currentSection.code ? currentSection.code : currentSection.title}`);
-            })
-            .catch(error => {
-                console.log(error);
-            })
+        addThread(title_input,content_input,1,currentSection.id); // todo: remove hard-coded user_id and replace with logged in user once login works
+
     };
 
     render(){
@@ -80,8 +62,15 @@ class ThreadsListNewItem extends Component{
 
 const mapStateToProps = state => {
     return {
-        currentSection: state.sections.currentSection
+        currentSection: state.sections.currentSection,
+        threadsLoading: state.threads.loading
     }
 };
 
-export default withRouter(connect(mapStateToProps)(ThreadsListNewItem));
+const mapDispatchToProps = dispatch => {
+    return {
+        addThread: (title, content, user_id, section_id) => {dispatch(addThread(title,content,user_id,section_id))}
+    }
+};
+
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(ThreadsListNewItem));

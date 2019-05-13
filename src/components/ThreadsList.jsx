@@ -2,8 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import ThreadsListItem from './ThreadsListItem';
-import { getUser} from "../redux/actionCreators/users_actionCreators";
-import {FETCH_USER_FAILURE, FETCH_USER_SUCCESS} from "../redux/actions/users_actions";
+import {getThreads} from "../redux/actionCreators/threads_actionCreators";
 
 
 class ThreadsList extends Component{
@@ -12,6 +11,12 @@ class ThreadsList extends Component{
         this.state = {
             user: null
         }
+    }
+
+    componentDidMount() {
+        const {currentSection, getThreads} = this.props;
+
+        getThreads(currentSection.id);
     }
 
     getUserName = (user_id) => {
@@ -30,23 +35,25 @@ class ThreadsList extends Component{
     };
 
     renderThreadsList = () => {
-        const { currentSection } = this.props;
+        const { currentSection, threads } = this.props;
 
         return currentSection.Threads.map( thread => {
-            const user_name = this.getUserName(thread.user_id);
-            console.log("user name: ",user_name);
+            // const user_name = this.getUserName(thread.user_id);
+            // console.log("user name: ",user_name);
             return <NavLink className={"ThreadsListItem-Link"} key={thread.id}
                             to={`/sections/${currentSection.code ? currentSection.code : currentSection.title}/${thread.id}`}>
-                { <ThreadsListItem title={thread.title} user_name={this.getUserName(thread.user_id)} content={thread.content}/>}
+                { <ThreadsListItem title={thread.title} user_name={""} content={thread.content}/>}
             </NavLink>
         })
     };
 
     render(){
+        const {isThreadsLoading} = this.props;
+
         return(
             <Fragment>
                 {
-                        this.renderThreadsList()
+                        !isThreadsLoading && this.renderThreadsList()
                 }
             </Fragment>
         )
@@ -56,8 +63,15 @@ class ThreadsList extends Component{
 const mapStateToProps = state =>{
     return {
         currentSection: state.sections.currentSection,
-        currentThread: state.threads.currentThread,
+        threads: state.threads.threads,
+        isThreadsLoading: state.threads.loading
     }
 };
 
-export default connect(mapStateToProps)(ThreadsList);
+const mapDispatchToProps = dispatch => {
+    return{
+        getThreads: (section_id) => {dispatch(getThreads(section_id))}
+    }
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(ThreadsList);

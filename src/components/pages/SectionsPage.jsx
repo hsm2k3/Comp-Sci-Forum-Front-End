@@ -44,7 +44,7 @@ class SectionsPage extends Component {
                                         currentSection.Threads && <ThreadsList />
                                     }
                                 </ul>
-                                <div id={'ThreadsListEnd'}></div>
+                                <div id={'ThreadsListEnd'}/>
                             </div>
                         </Fragment>
                 }

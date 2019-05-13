@@ -12,7 +12,6 @@ const ThreadsListItem = props => {
                 </div>
                 <div className={"ThreadsListItemAuthor"}>
                     <p>Posted by {props.user_name ? props.user_name : "some dude"}</p>
-                    {console.log("ThreadsListItem: ", props.user_name)}
                 </div>
             </div>
             {props.class ? null : <div className={'accents'}>() => (</div>}
