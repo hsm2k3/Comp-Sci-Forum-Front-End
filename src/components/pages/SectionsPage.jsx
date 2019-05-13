@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import { connect } from 'react-redux';
 import { setCurrentSection } from '../../redux/actionCreators/sections_actionCreators';
 import ThreadsList from '../ThreadsList';
+import ThreadsListNewItem from '../ThreadsListNewItem';
 import SectionsPageHeader from '../SectionsPageHeader';
 // import PropTypes from 'prop-types';
 
@@ -27,7 +28,6 @@ class SectionsPage extends Component {
         }
     }
 
-
     render(){
         const { currentSection } = this.props;
 
@@ -37,6 +37,7 @@ class SectionsPage extends Component {
                     currentSection &&
                         <Fragment>
                             <SectionsPageHeader section={currentSection}/>
+                            <ThreadsListNewItem/>
                             <div className={'SectionsPageBody'}>
                                 <ul className={'ThreadsList'}>
                                     {

@@ -21,7 +21,7 @@ class ThreadsList extends Component{
             })
             .then(data => {
                 let name = `${data.first_name} ${data.last_name}`;
-                console.log("getUserName: ", name);
+                // console.log("getUserName: ", name);
                 return name;
             })
             .catch(error => {

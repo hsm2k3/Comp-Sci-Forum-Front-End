@@ -19,7 +19,8 @@
 }
 
 .ThreadsListItem,
-.ThreadsListItem-NoHover{
+.ThreadsListItem-NoHover,
+.ThreadsListNewItem{
   list-style: none;
   /*put minheight, maxheight, and make clickable to expand*/
   color: rgba(255,255,255,0.8);
@@ -41,6 +42,38 @@
   border-bottom: 15px solid transparent;
   border-left: 20px solid #CF873F;
   border-right: 20px solid #CF873F;
+}
+.ThreadsListNewItem{
+  padding: 0;
+  border-left: 20px solid $highlightColor2;
+  border-right: 20px solid $highlightColor2;
+
+  .ThreadsListNewItemButton{
+    flex: 1 1;
+  }
+
+  .ThreadsListItemBody{
+    flex: 12 1;
+    display:flex;
+    padding: 10px 0;
+  }
+
+  .ThreadsListItemHead{
+    flex: 1 1;
+  }
+  .ThreadsListItemContent{
+    flex: 8 1;
+  }
+
+  input[type=text]::placeholder{
+    color: $highlightColor2;
+  }
+
+  .form-control{
+    color: #FFFFFF;
+    border: none;
+    background-color: transparent;
+  }
 }
 
 
