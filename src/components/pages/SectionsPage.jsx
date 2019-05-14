@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import { connect } from 'react-redux';
 import { setCurrentSection } from '../../redux/actionCreators/sections_actionCreators';
+import { getThreads} from "../../redux/actionCreators/threads_actionCreators";
 import ThreadsList from '../ThreadsList';
 import ThreadsListNewItem from '../ThreadsListNewItem';
 import SectionsPageHeader from '../SectionsPageHeader';
@@ -20,28 +21,34 @@ class SectionsPage extends Component {
     componentDidUpdate(prevProps) {
         const section = this.props.match.params.section;
         const prevSection = prevProps.match.params.section;
+        const { setCurrentSection, currentSection, getThreads, threads } = this.props;
 
 
         //If update needed
         if(section !== prevSection){
-            this.props.setCurrentSection(section);
+            if(section){
+                setCurrentSection(section);
+                // getThreads(currentSection.id);
+                console.log("called getThreads", threads);
+            }
         }
     }
 
     render(){
-        const { currentSection } = this.props;
+        const { currentSection, threads } = this.props;
+        if(threads) console.log("render",threads);
 
         return(
             <div id={"SectionsPage"}>
                 {
-                    currentSection &&
+                    currentSection  &&
                         <Fragment>
                             <SectionsPageHeader section={currentSection}/>
                             <ThreadsListNewItem/>
                             <div className={'SectionsPageBody'}>
                                 <ul className={'ThreadsList'}>
                                     {
-                                        currentSection.Threads && <ThreadsList />
+                                        threads && <ThreadsList />
                                     }
                                 </ul>
                                 <div id={'ThreadsListEnd'}/>
@@ -61,13 +68,14 @@ const mapStateToProps = state => {
     return {
         sections: state.sections.sections,
         currentSection: state.sections.currentSection,
-        threads: state.sections.threads
+        threads: state.threads.threads
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        setCurrentSection: (section) => dispatch(setCurrentSection(section))
+        setCurrentSection: (section) => dispatch(setCurrentSection(section)),
+        getThreads: (section_id) => {dispatch(getThreads(section_id))}
     }
 };
 

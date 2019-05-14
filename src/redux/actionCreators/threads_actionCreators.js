@@ -48,12 +48,14 @@ export const addThread = (title, content, user_id, section_id) => {
 
 export const getThreads = (sectionID) => {
     return(dispatch, getState) => {
+        console.log("Threads fetched sectionID", sectionID);
         dispatch({type: FETCH_THREADS_BEGIN});
         fetch(`/api/sections/id/${sectionID}`)
             .then(res => {
                 return res.json()
             })
             .then(data => {
+                console.log("Threads fetched", data);
                 dispatch({
                     type: FETCH_THREADS_SUCCESS,
                     payload:{

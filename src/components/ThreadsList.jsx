@@ -14,35 +14,29 @@ class ThreadsList extends Component{
     }
 
     componentDidMount() {
-        const {currentSection, getThreads} = this.props;
+        const {currentSection, getThreads, threads} = this.props;
 
         getThreads(currentSection.id);
+        console.log('variable check: ',
+            currentSection.id,
+            threads
+        );
 
     }
 
     componentDidUpdate(prevProps) {
-        const {currentSection, getThreads, threadAddedFlag, resetThreadAddedFlag} = this.props;
+        const {currentSection, getThreads, threadAddedFlag, resetThreadAddedFlag, threads} = this.props;
+
+        if((prevProps.currentSection.code !== currentSection.code) && (prevProps.currentSection.title !== currentSection.title)){
+            console.log("check",prevProps.currentSection,currentSection);
+            getThreads(currentSection.id);
+        }
 
         if(threadAddedFlag){
             getThreads(currentSection.id);
             resetThreadAddedFlag();
         }
     }
-
-    getUserName = (user_id) => {
-        fetch(`/api/users/id/${user_id}`)
-            .then(res => {
-                return res.json()
-            })
-            .then(data => {
-                let name = `${data.first_name} ${data.last_name}`;
-                // console.log("getUserName: ", name);
-                return name;
-            })
-            .catch(error => {
-                console.log(error);
-            })
-    };
 
 
     render(){
@@ -52,15 +46,15 @@ class ThreadsList extends Component{
         return(
             <Fragment>
                 {
-                        !isThreadsLoading && threads &&
-                            threads.map( thread => {
-                                // const user_name = this.getUserName(thread.user_id);
-                                // console.log("user name: ",user_name);
-                                return <NavLink className={"ThreadsListItem-Link"} key={thread.id}
-                                                to={`/sections/${currentSection.code ? currentSection.code : currentSection.title}/${thread.id}`}>
-                                    { <ThreadsListItem title={thread.title} user_name={""} content={thread.content}/>}
-                                </NavLink>
-                            })
+                    !isThreadsLoading && threads &&
+                        threads.map( thread => {
+                            // const user_name = this.getUserName(thread.user_id);
+                            // console.log("user name: ",user_name);
+                            return <NavLink className={"ThreadsListItem-Link"} key={thread.id}
+                                            to={`/sections/${currentSection.code ? currentSection.code : currentSection.title}/${thread.id}`}>
+                                { <ThreadsListItem title={thread.title} user_name={""} content={thread.content}/>}
+                            </NavLink>
+                        })
                 }
             </Fragment>
         )
