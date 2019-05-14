@@ -37,22 +37,20 @@ class ThreadsPage extends Component {
 		const { currentSection, currentThread } = this.props;
 
 		return(
-
 			<div id={"ThreadsPage"}>
 
-
-						<Fragment>
-							{currentSection && <SectionsPageHeader section={currentSection}/>}
-							<div className="orangeBorder">
-								{currentThread && <ThreadsListItem class={"ThreadsListItem-NoHover"} title={currentThread.title}
-												 user_id={currentThread.user_id} content={currentThread.content}/>}
-								 <ul className={'PostsList'}>
-									 {
-										 currentThread && <PostsList posts={currentThread.Posts} />
-									 }
-								 </ul>
-							 </div>
-						</Fragment>
+				<Fragment>
+					{currentSection && <SectionsPageHeader section={currentSection}/>}
+					<div className="orangeBorder">
+						{currentThread && <ThreadsListItem class={"ThreadsListItem-NoHover"} title={currentThread.title}
+										 user_id={currentThread.user_id} content={currentThread.content}/>}
+						 <ul className={'PostsList'}>
+							 {
+								 currentThread && <PostsList posts={currentThread.Posts} />
+							 }
+						 </ul>
+					 </div>
+				</Fragment>
 
 			</div>
 		);
