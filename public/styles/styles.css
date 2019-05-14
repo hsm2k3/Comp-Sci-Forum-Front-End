@@ -364,6 +364,7 @@ a {
 }
 
 .ThreadsListNewItem {
+  flex: 0.75 1;
   padding: 0;
   border-left: 20px solid #CF873F;
   border-right: 20px solid #CF873F;
@@ -373,6 +374,7 @@ a {
 }
 .ThreadsListNewItem input[type=text] {
   border-radius: 0;
+  height: 100%;
 }
 .ThreadsListNewItem input[type=text]:focus,
 .ThreadsListNewItem input[type=text]:hover {
