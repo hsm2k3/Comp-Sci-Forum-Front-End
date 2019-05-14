@@ -368,19 +368,50 @@ a {
   border-left: 20px solid #CF873F;
   border-right: 20px solid #CF873F;
 }
+.ThreadsListNewItem :hover input[type=text] {
+  background-color: rgba(70, 78, 85, 0.8);
+}
+.ThreadsListNewItem input[type=text] {
+  border-radius: 0;
+}
+.ThreadsListNewItem input[type=text]:focus,
+.ThreadsListNewItem input[type=text]:hover {
+  background-color: rgba(70, 78, 85, 0.8);
+  box-shadow: none;
+}
 .ThreadsListNewItem .ThreadsListNewItemButton {
   flex: 1 1;
+}
+.ThreadsListNewItem .ThreadsListNewItemButton button {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border: none;
+  padding: 0;
+}
+.ThreadsListNewItem .ThreadsListNewItemButton button:hover {
+  background-color: #CF873F;
 }
 .ThreadsListNewItem .ThreadsListItemBody {
   flex: 12 1;
   display: flex;
-  padding: 10px 0;
+}
+.ThreadsListNewItem .ThreadsListItemBody :hover {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .ThreadsListNewItem .ThreadsListItemHead {
-  flex: 1 1;
+  flex: 3 1;
+  height: 100%;
+}
+.ThreadsListNewItem .ThreadsListItemHead :hover {
+  background-color: #fff;
 }
 .ThreadsListNewItem .ThreadsListItemContent {
   flex: 8 1;
+  margin: 0;
+}
+.ThreadsListNewItem .ThreadsListItemContent :hover {
+  background-color: #fff;
 }
 .ThreadsListNewItem input[type=text]::placeholder {
   color: #CF873F;
@@ -425,10 +456,6 @@ a {
   flex: 1 1;
   display: flex;
   flex-direction: column;
-}
-
-.ThreadsListItemTitle {
-  color: rgba(255, 255, 255, 0.8);
 }
 
 .ThreadsListItemAuthor {

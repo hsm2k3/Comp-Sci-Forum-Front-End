@@ -43,26 +43,65 @@
   border-left: 20px solid #CF873F;
   border-right: 20px solid #CF873F;
 }
+
 .ThreadsListNewItem{
   padding: 0;
   border-left: 20px solid $highlightColor2;
   border-right: 20px solid $highlightColor2;
+  
+  :hover input[type=text]{
+    background-color: rgba(70,78,85,0.8);
+  }
+
+  input[type=text]{
+    border-radius: 0;
+  }
+
+  input[type=text]:focus,
+  input[type=text]:hover{
+    background-color: rgba(70,78,85,0.8);
+    box-shadow: none;
+  }
 
   .ThreadsListNewItemButton{
     flex: 1 1;
+
+    button{
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      border: none;
+      padding: 0;
+    }
+    button:hover{
+      background-color: $highlightColor2;
+    }
   }
 
   .ThreadsListItemBody{
     flex: 12 1;
     display:flex;
-    padding: 10px 0;
+
+    :hover{
+      background-color: rgba(255,255,255,0.8);
+    }
   }
 
   .ThreadsListItemHead{
-    flex: 1 1;
+    flex: 3 1;
+    height: 100%;
+    
+    :hover{
+      background-color: #fff;
+    }
   }
   .ThreadsListItemContent{
     flex: 8 1;
+    margin: 0;
+
+    :hover{
+      background-color: #fff;
+    }
   }
 
   input[type=text]::placeholder{
@@ -107,9 +146,6 @@
   flex: 1 1;
   display: flex;
   flex-direction: column;
-}
-.ThreadsListItemTitle{
-  color: rgba(255,255,255,0.8);
 }
 .ThreadsListItemAuthor{
   font-size: .85rem;

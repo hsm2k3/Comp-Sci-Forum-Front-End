@@ -51,9 +51,7 @@ class ThreadsListNewItem extends Component{
                 </div>
                 <div className={"ThreadsListItemBody"}>
                     <div className={"ThreadsListItemHead"}>
-                        <div className={"ThreadsListItemTitle"}>
-                            <FormControl ref={this.title} onChange={(event) => this.handleChange_title(event)} type="text" placeholder="Thread Title..." className="mr-sm-2" />
-                        </div>
+                        <FormControl ref={this.title} onChange={(event) => this.handleChange_title(event)} type="text" placeholder="Thread Title..." className="mr-sm-2" />
                     </div>
                     <div className={"ThreadsListItemContent"}>
                         <FormControl ref={this.content} onChange={(event) => this.handleChange_content(event)} type="text" placeholder="Description..." className="mr-sm-2" />
