@@ -5,7 +5,8 @@ import {
     SET_CURRENT_THREAD,
     ADD_THREADS_BEGIN,
     ADD_THREADS_SUCCESS,
-    ADD_THREADS_FAILURE
+    ADD_THREADS_FAILURE,
+    RESET_ADDED_THREAD_FLAG
 } from '../actions/threads_actions';
 
 
@@ -48,7 +49,7 @@ export const addThread = (title, content, user_id, section_id) => {
 export const getThreads = (sectionID) => {
     return(dispatch, getState) => {
         dispatch({type: FETCH_THREADS_BEGIN});
-        fetch(`/api/threads/${sectionID}`)
+        fetch(`/api/sections/id/${sectionID}`)
             .then(res => {
                 return res.json()
             })
@@ -56,7 +57,7 @@ export const getThreads = (sectionID) => {
                 dispatch({
                     type: FETCH_THREADS_SUCCESS,
                     payload:{
-                        threads: data
+                        threads: data.Threads
                     }
                 })
             })
@@ -88,5 +89,13 @@ export const setCurrentThread = (threadId) => {
             .catch(() => {
                 console.error('ThreadsPage: unable to fetch data');
             });
+    }
+};
+
+export const resetThreadAddedFlag = () => {
+    return(dispatch, getState) => {
+        dispatch({
+            type: RESET_ADDED_THREAD_FLAG
+        })
     }
 };

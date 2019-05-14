@@ -5,7 +5,8 @@ import {
     SET_CURRENT_THREAD,
     ADD_THREADS_BEGIN,
     ADD_THREADS_SUCCESS,
-    ADD_THREADS_FAILURE
+    ADD_THREADS_FAILURE,
+    RESET_ADDED_THREAD_FLAG
 } from '../actions/threads_actions';
 
 
@@ -13,6 +14,7 @@ const initialState = {
     loading: false,
     currentThread: null,
     threads: [],
+    threadAddedFlag: false,
     error: null
 };
 
@@ -53,6 +55,7 @@ export const threads = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
+                threadAddedFlag: true,
                 error: null
             };
         case ADD_THREADS_FAILURE:
@@ -60,6 +63,13 @@ export const threads = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 error: action.payload.error
+            };
+        case RESET_ADDED_THREAD_FLAG:
+            return {
+                ...state,
+                loading:false,
+                threadAddedFlag: false,
+                error: null
             };
         default:
             return state;
