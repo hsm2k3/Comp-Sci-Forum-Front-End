@@ -8,7 +8,7 @@ const PostsList = props => (
             key={post.id}
             id={post.id}
             content={post.content}
-            user={post.user_id} />
+            user={""} />
     })
 );
 
