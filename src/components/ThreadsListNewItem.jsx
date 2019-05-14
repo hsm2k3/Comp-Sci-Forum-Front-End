@@ -13,7 +13,9 @@ class ThreadsListNewItem extends Component{
         this.state = {
             title_input: null,
             content_input: null
-        }
+        };
+        this.title = React.createRef();
+        this.content = React.createRef();
     }
 
     handleChange_title = event => {
@@ -33,6 +35,8 @@ class ThreadsListNewItem extends Component{
         event.preventDefault();
         addThread(title_input,content_input,1,currentSection.id); // todo: remove hard-coded user_id and replace with logged in user once login works
 
+        this.title.current.value = "";
+        this.content.current.value = "";
     };
 
     render(){
@@ -48,11 +52,11 @@ class ThreadsListNewItem extends Component{
                 <div className={"ThreadsListItemBody"}>
                     <div className={"ThreadsListItemHead"}>
                         <div className={"ThreadsListItemTitle"}>
-                            <FormControl onChange={(event) => this.handleChange_title(event)} type="text" placeholder="Thread Title..." className="mr-sm-2" />
+                            <FormControl ref={this.title} onChange={(event) => this.handleChange_title(event)} type="text" placeholder="Thread Title..." className="mr-sm-2" />
                         </div>
                     </div>
                     <div className={"ThreadsListItemContent"}>
-                        <FormControl onChange={(event) => this.handleChange_content(event)} type="text" placeholder="Description..." className="mr-sm-2" />
+                        <FormControl ref={this.content} onChange={(event) => this.handleChange_content(event)} type="text" placeholder="Description..." className="mr-sm-2" />
                     </div>
                 </div>
             </form>
