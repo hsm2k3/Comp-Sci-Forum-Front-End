@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ComingSoon from '../ComingSoon';
 // import PropTypes from 'prop-types';
 
 class ProfilePage extends Component {
@@ -18,7 +19,7 @@ class ProfilePage extends Component {
     render(){
         return(
             <div id={"ProfilePage"}>
-                <h1>Profile Page</h1>
+                <ComingSoon page={"Profile Page"}/>
             </div>
         );
     };

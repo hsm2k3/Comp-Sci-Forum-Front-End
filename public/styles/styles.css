@@ -101,6 +101,11 @@ a {
   flex-direction: column;
 }
 
+#AboutPage,
+#ProfilePage {
+  flex-direction: column;
+}
+
 #LoginPage > form {
   color: #CF873F;
   background-color: rgba(57, 64, 70, 0.8);
@@ -569,6 +574,15 @@ svg {
 
 #goToLoginButton {
   padding-right: 6px;
+}
+
+.comingSoon {
+  text-align: center;
+  color: #fff;
+  background-color: rgba(57, 64, 70, 0.8);
+}
+.comingSoon h1 {
+  color: #CF873F;
 }
 
 /*# sourceMappingURL=styles.css.map */
