@@ -465,6 +465,9 @@ a {
   color: #CF873F;
   padding-left: 30px;
 }
+.ThreadsListItemAuthor span {
+  color: #17a2b8;
+}
 
 .ThreadsListItemContent {
   font-size: 0.9rem;

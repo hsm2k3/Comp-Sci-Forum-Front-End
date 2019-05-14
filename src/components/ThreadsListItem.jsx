@@ -11,7 +11,7 @@ const ThreadsListItem = props => {
                     <h5>{props.title}</h5>
                 </div>
                 <div className={"ThreadsListItemAuthor"}>
-                    <p>Posted by {props.user_name ? props.user_name : "some dude"}</p>
+                    <p>Posted by <span>{props.user_name ? props.user_name : "some dude"}</span></p>
                 </div>
             </div>
             {props.class ? null : <div className={'accents'}>() => (</div>}
