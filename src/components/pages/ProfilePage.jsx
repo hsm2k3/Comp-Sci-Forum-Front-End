@@ -1,16 +1,13 @@
 import React, {Component} from 'react';
+import {connect} from "react-redux";
 import ComingSoon from '../ComingSoon';
 // import PropTypes from 'prop-types';
 
 class ProfilePage extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            users: []
-        };
-    }
 
     componentDidMount() {
+        const { loggedInUserID } = this.props;
+
         fetch('/users')
             .then(res => res.json())
             .then(users => this.setState({users}));
@@ -29,4 +26,10 @@ class ProfilePage extends Component {
 //
 // };
 
-export default ProfilePage;
+const mapStateToProps = state => {
+    return {
+        loggedInUserID: state.users.loggedInUserID
+    }
+};
+
+export default connect(mapStateToProps)(ProfilePage);

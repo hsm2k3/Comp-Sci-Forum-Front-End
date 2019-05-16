@@ -7,7 +7,7 @@ import {
 
 const initialState = {
     user: null,
-    loggedInUser: null
+    loggedInUserID: 1
 };
 
 export const users = (state = initialState, action) => {
