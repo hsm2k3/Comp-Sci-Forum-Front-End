@@ -7,12 +7,33 @@ import {FormControl} from "react-bootstrap";
 
 
 class SideMenu extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            filterString: '',
+
+        }
+    }
 
     componentDidMount(){
         const { getSections } = this.props;
         getSections();
     }
 
+    filterStringChange = event => {
+        this.setState({filterString: event.target.value});
+    };
+
+    filterSectionList = sections => {
+        let { filterString } = this.state;
+        filterString = filterString.toUpperCase();
+
+        return sections.filter(section =>
+            (section.code !== '') ?
+                section.code.toUpperCase().includes(filterString)
+                : section.title.toUpperCase().includes(filterString))
+        ;
+    };
 
     render(){
         const { sections } = this.props.sections;
@@ -20,10 +41,13 @@ class SideMenu extends Component {
         return(
             <aside id={"SideMenu"}>
                 <h5>Sections</h5>
-                <FormControl type="text" placeholder="Search Sections" className="mr-sm-2" />
+                <FormControl type="text" placeholder="Search Sections" className="mr-sm-2" onChange={this.filterStringChange}/>
                 <ul>
-                { sections && <SectionsList sections={sections} /> }
+                    { sections && <SectionsList sections={this.filterSectionList(sections)} /> }
                 </ul>
+                {
+
+                }
             </aside>
         );
     };
