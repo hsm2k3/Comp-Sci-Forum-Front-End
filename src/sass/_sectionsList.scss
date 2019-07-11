@@ -1,3 +1,5 @@
+@import 'variables';
+
 .SectionListItem{
   list-style: none;
   background-color: rgba(255,255,255,0.2);
@@ -13,4 +15,8 @@
 .SectionListLink:hover{
   color: black;
   text-decoration: none;
+}
+
+#SectionsList_enterMessage{
+  font-weight: bold;
 }

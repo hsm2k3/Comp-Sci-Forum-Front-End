@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getSections } from '../redux/actionCreators/sections_actionCreators';
 import SectionsList from './SectionsList';
 import {FormControl} from "react-bootstrap";
+import { withRouter } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 
 
@@ -11,13 +12,22 @@ class SideMenu extends Component {
         super(props);
         this.state = {
             filterString: '',
-
+            oneResult: false
         }
     }
 
     componentDidMount(){
-        const { getSections } = this.props;
-        getSections();
+        //  get sections data
+        this.props.getSections();
+
+        const sideMenuFilter = document.getElementById("sideMenuFilter");
+        sideMenuFilter.focus();
+        sideMenuFilter.addEventListener("keypress", event => {
+            if(event.key === "Enter"){
+                //  put code to go to page of one section result
+                console.log("Enter hit!");
+            }
+        }, false);
     }
 
     filterStringChange = event => {
@@ -25,29 +35,33 @@ class SideMenu extends Component {
     };
 
     filterSectionList = sections => {
-        let { filterString } = this.state;
+        let { filterString, oneResult } = this.state;
         filterString = filterString.toUpperCase();
 
-        return sections.filter(section =>
+        const filteredSections = sections.filter(section =>
             (section.code !== '') ?
                 section.code.toUpperCase().includes(filterString)
                 : section.title.toUpperCase().includes(filterString))
         ;
+
+        //  check if one result from filter
+        if(!oneResult && filteredSections.length === 1) this.setState({oneResult: true});
+        if(oneResult && filteredSections.length !== 1) this.setState({oneResult: false});
+
+        return filteredSections;
     };
 
     render(){
         const { sections } = this.props.sections;
+        const { oneResult } = this.state;
 
         return(
             <aside id={"SideMenu"}>
                 <h5>Sections</h5>
-                <FormControl type="text" placeholder="Search Sections" className="mr-sm-2" onChange={this.filterStringChange}/>
+                <FormControl type="text" placeholder="Search Sections" id="sideMenuFilter" className="mr-sm-2" onChange={this.filterStringChange}/>
                 <ul>
-                    { sections && <SectionsList sections={this.filterSectionList(sections)} /> }
+                    { sections && <SectionsList sections={this.filterSectionList(sections)} oneResult={oneResult} /> }
                 </ul>
-                {
-
-                }
             </aside>
         );
     };

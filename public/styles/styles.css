@@ -220,6 +220,10 @@ a {
   text-decoration: none;
 }
 
+#SectionsList_enterMessage {
+  font-weight: bold;
+}
+
 #ThreadsPage {
   display: flex;
   flex-direction: column;
