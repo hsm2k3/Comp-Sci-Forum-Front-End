@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import ComingSoon from '../ComingSoon';
 // import PropTypes from 'prop-types';
 
 class DashPage extends Component {
@@ -24,10 +25,7 @@ class DashPage extends Component {
                         <NavLink to="" className={"nav-link sub-nav-link add-nav-link"}><FontAwesomeIcon icon={faPlus}/></NavLink>
                     </ul>
                 </nav>
-                <div className="dash-body">
-                    <h1>Dash Page</h1>
-                </div>
-
+                <ComingSoon page="Dash Page" />
             </div>
         );
     };
