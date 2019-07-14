@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getSections } from '../redux/actionCreators/sections_actionCreators';
 import SectionsList from './SectionsList';
 import {FormControl} from "react-bootstrap";
-import { withRouter } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 
 
@@ -12,7 +12,9 @@ class SideMenu extends Component {
         super(props);
         this.state = {
             filterString: '',
-            oneResult: false
+            redirect: false,
+            oneResult: false,
+            oneResultSection: {}
         }
     }
 
@@ -20,11 +22,13 @@ class SideMenu extends Component {
         //  get sections data
         this.props.getSections();
 
+        const { redirect } = this.state;
+
         const sideMenuFilter = document.getElementById("sideMenuFilter");
         sideMenuFilter.focus();
         sideMenuFilter.addEventListener("keypress", event => {
             if(event.key === "Enter"){
-                //  put code to go to page of one section result
+                if(!redirect) this.setState({redirect: true});
                 console.log("Enter hit!");
             }
         }, false);
@@ -45,15 +49,21 @@ class SideMenu extends Component {
         ;
 
         //  check if one result from filter
-        if(!oneResult && filteredSections.length === 1) this.setState({oneResult: true});
-        if(oneResult && filteredSections.length !== 1) this.setState({oneResult: false});
+        if(!oneResult && filteredSections.length === 1) this.setState({oneResult: true, oneResultSection: filteredSections[0]});
+        if(oneResult && filteredSections.length !== 1) this.setState({oneResult: false, oneResultSection: {} });
 
         return filteredSections;
     };
 
     render(){
         const { sections } = this.props.sections;
-        const { oneResult } = this.state;
+        const { oneResult, oneResultSection, redirect } = this.state;
+
+        //  doesn't work yet
+        // if(redirect) {
+        //     const redirectRoute = `/sections/${oneResultSection.code ? oneResultSection.code : oneResultSection.title}`;
+        //     return <Redirect to={redirectRoute} />;
+        // }
 
         return(
             <aside id={"SideMenu"}>
